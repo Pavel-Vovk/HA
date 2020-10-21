@@ -1,0 +1,30 @@
+resources:
+  #- !include /config/includes/resources.yaml
+  # if you have installed the card through the HACS integration
+  #/config/www/community/ha-card-weather-conditions/ha-card-weather-conditions.js
+  - url: /hacsfiles/ha-card-weather-conditions/ha-card-weather-conditions.js
+    type: module
+  #
+  # Optional:
+  # adding the card-mod plugin enable an advanced card look configuration
+  - url: /hacsfiles/lovelace-card-mod/card-mod.js
+    type: module
+
+  - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
+    type: module
+  - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
+    type: module    
+title: !secret home_title
+views:
+##Погода
+  - !include /config/includes/views/weather.yaml
+##Мережа
+  - !include /config/includes/views/network.yaml
+##Мережа Траффік
+  - !include /config/includes/views/network_traffic.yaml
+##Дані Сервера HA
+  - !include /config/includes/views/homeassistant.yaml
+##Дані Кімната 2
+  - !include /config/includes/views/esp32_room2.yaml
+##Дані Спальня
+  - !include /config/includes/views/esp32_bed_room.yaml

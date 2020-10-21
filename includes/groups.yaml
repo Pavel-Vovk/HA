@@ -1,0 +1,11 @@
+
+  wired:
+    name: "Провідні"
+    entities:
+      - device_tracker.mikrotik_cap_ac1
+      - device_tracker.raspberrypi
+      - device_tracker.wdmycloud
+
+  wireless:
+    name: "Беспровідні"
+    entities: 

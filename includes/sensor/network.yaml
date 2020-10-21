@@ -1,0 +1,72 @@
+#### Трафік у мегабітах
+  - platform: template
+    sensors:
+      network_router_rxt_mbit:
+        friendly_name: "Router. Отримано"
+        unit_of_measurement: 'Mbit/sec'
+        value_template: "{{ (states('sensor.mikrotikrouter_ether1_rx') | int / 1024) | round(1) | float }}"
+        icon_template: mdi:download-network
+      network_router_txt_mbit:
+        friendly_name: "Router. Передано"
+        unit_of_measurement: 'Mbit/sec'
+        value_template: "{{ (states('sensor.mikrotikrouter_ether1_tx') | int / 1024) | round(1) | float }}"
+        icon_template: mdi:upload-network
+      network_ap1_rxt_mbit:
+        friendly_name: "Access Point 1. Отримано"
+        unit_of_measurement: 'Mbit/sec'
+        value_template: "{{ (states('sensor.mikrotikaccesspoint1_ether1_rx') | int / 1024) | round(1) | float }}"
+        icon_template: mdi:download-network
+      network_ap1_txt_mbit:
+        friendly_name: "Access Point 1. Передано"
+        unit_of_measurement: 'Mbit/sec'
+        value_template: "{{ (states('sensor.mikrotikaccesspoint1_ether1_tx') | int / 1024) | round(1) | float }}"
+        icon_template: mdi:upload-network
+#### Загальний трафік
+  - platform: template
+    sensors:
+      network_router_total_mbit:
+        friendly_name: "Router. Загальний"
+        unit_of_measurement: 'Mbit/sec'
+        value_template: "{{ (states('sensor.network_router_rxt_mbit') | float + (states('sensor.network_router_txt_mbit') | float))| round(1) }}"
+        icon_template: mdi:network
+      network_ap1_total_mbit:
+        friendly_name: "Access Point. Загальний"
+        unit_of_measurement: 'Mbit/sec'
+        value_template: "{{ (states('sensor.network_ap1_rxt_mbit') | float + (states('sensor.network_ap1_txt_mbit') | float))| round(1) }}"
+        icon_template: mdi:network
+#### Внутрішній трафік
+  - platform: template
+    sensors:
+      network_lan_internal_download_kbit:
+        friendly_name: "Lan. Отримано"
+        unit_of_measurement: 'Kbit/sec'
+        value_template: "{{ state_attr('switch.mikrotikrouter_queue_internal','Download rate') | replace(' Kbps', '') }}"
+        icon_template: mdi:lan
+      network_lan_internal_upload_kbit:
+        friendly_name: "Lan. Передано"
+        unit_of_measurement: 'Kbit/sec'
+        value_template: "{{ state_attr('switch.mikrotikrouter_queue_internal','Upload rate') | replace(' Kbps', '') }}"
+        icon_template: mdi:lan  
+  - platform: template
+    sensors:
+      network_lan_internal_total_kbit:
+        friendly_name: "Lan. Загальний"
+        unit_of_measurement: 'Kbit/sec'
+        value_template: "{{ (states('sensor.network_lan_internal_download_kbit') | int + (states('sensor.network_lan_internal_upload_kbit') | int))}}"
+        icon_template: mdi:lan
+### Частка внутрішнього трафіку в загальному
+  - platform: template
+    sensors:
+      network_lan_internet:
+        friendly_name: "Lan. Відсоток"
+        unit_of_measurement: "%"
+        value_template: "{{((states('sensor.network_lan_internal_total_kbit')| int)/(states('sensor.mikrotikrouter_ether1_tx') | int + states('sensor.mikrotikrouter_ether1_rx') | int +states('sensor.network_lan_internal_total_kbit') | int )) | round(4) | float * 100 }}"
+        icon_template: mdi:lan
+### Загальний завнішній трафік
+  - platform: template
+    sensors:
+      network_router_total_kbit:
+        friendly_name: "Internet. Загальний"
+        unit_of_measurement: "Kbit/sec"
+        value_template: "{{states('sensor.mikrotikrouter_ether1_rx') | int + states('sensor.mikrotikrouter_ether1_tx') | int}}"
+        icon_template: mdi:network

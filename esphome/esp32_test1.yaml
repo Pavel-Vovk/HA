@@ -1,0 +1,88 @@
+# Змінні
+substitutions:
+ location: esp32_test1_location
+ plant: monstera
+
+esphome:
+  name: esp32_test1
+  platform: ESP32
+  board: nodemcu-32s
+
+wifi:
+  ssid: !secret wifi_common_ssid
+  password: !secret wifi_common_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: !secret wifi_esp32_test1_ssid
+    password: !secret wifi_esp32_test1_pass
+
+web_server:
+  port: 80
+
+# Інтервал сканування BLE
+esp32_ble_tracker:
+    
+
+sensor:
+  - platform: dht
+    pin: GPIO23
+    model: DHT11
+    temperature:
+      #id:
+      name: "${location}_DH11_temperature"
+    humidity:
+      #id:
+      name: "${location}_DH11_humidity"
+    update_interval: 60s
+
+# Час в онлайні
+  - platform: uptime
+    name: ${location}_uptime
+    update_interval: 60s     
+
+# Рівень сигнала шлюзу
+  - platform: wifi_signal
+    name:  ${location}_wi-fi
+    update_interval: 60s
+
+#Сенсори годинника Вітальня    
+  - platform: xiaomi_lywsd02
+    mac_address: !secret living_room_time_mac
+    temperature:
+      name: "LYWSD02_living_room_Temperature"
+    humidity:
+      name: "LYWSD02_living_room_Humidity"
+    # battery_level:
+    #   name: "LYWSD02_living_room_battery_level"
+
+#Сенсори годинника Спальня    
+  - platform: xiaomi_lywsd02
+    mac_address: !secret bed_room_time_mac
+    temperature:
+      name: "LYWSD02_bed_room_Humidity_bed_room_Temperature"
+    humidity:
+      name: "LYWSD02_bed_room_Humidity"
+    # battery_level:
+    #   name: "LYWSD02_bad_room_battery_level"
+
+# Версія прошивки
+text_sensor:
+  - platform: version
+    name: ${location}_firmware_version
+    icon: "mdi:information"
+    
+# кнопка перезапуска    
+switch:
+  - platform: restart
+    name: ${location}_Restart
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:

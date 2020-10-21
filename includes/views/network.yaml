@@ -1,0 +1,247 @@
+title: Мережа
+icon: mdi:check-network
+cards:
+  - type: vertical-stack
+######################## Роутер
+    cards:      
+    - type: markdown
+      icon: mdi:lan-connect
+      content: >
+         <ha-icon icon="mdi:router-network"></ha-icon>
+         **Router. MikroTik RB4011iGS+**
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: device_tracker.mikrotikrouter_ether1
+          name: Router. WAN. Порт підключено до
+        - entity: sensor.mikrotikrouter_hdd_usage
+          name: Router. Використання диску
+        - entity: sensor.mikrotikrouter_temperature
+          name: Router. Температура
+          
+    - type: horizontal-stack
+      cards:
+      # - type: history-graph
+        # title: 'Температура'
+        # entities:
+          # - entity: sensor.mikrotikrouter_temperature
+            # name: Температура
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.mikrotikrouter_temperature
+            name: Температура
+        name: Температура
+        line_color: blue
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          average: true
+          extrema: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 35
+            color: "#4682B4"
+          - value: 40
+            color: "#FFA500"
+          - value: 45
+            color: "#FF4500"
+          - value: 50
+            color: "#FF0000"
+
+###############################            
+    - type: horizontal-stack
+      cards:
+      - type: gauge
+        entity: sensor.mikrotikrouter_cpu_load
+        name: Mikrotik Router. Завантаження CPU
+        unit: '%'
+        severity:
+          green: 0
+          yellow: 60
+          red: 85
+      - type: gauge
+        entity: sensor.mikrotikrouter_memory_usage
+        name: Mikrotik Router. Пам'ять заповнена
+        unit: '%'
+        severity:
+          green: 0
+          yellow: 60
+          red: 85
+    - type: horizontal-stack
+      cards:            
+      # - type: history-graph
+        # title: 'Завантаження CPU'
+        # entities:
+          # - entity: sensor.mikrotikrouter_cpu_load
+            # name: CPU
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        name: Router. Завантаження
+        entities:
+          - entity: sensor.mikrotikrouter_cpu_load
+            name: CPU
+            color: "#87CEFA"
+          - entity: sensor.mikrotikrouter_memory_usage
+            name: Пам'ять
+            color: green            
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          state: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 50
+            color: "#4682B4"
+          - value: 60
+            color: "#FFA500"
+          - value: 70
+            color: "#FF4500"
+          - value: 80
+            color: "#FF0000"
+         
+###############################                         
+###############################      
+  - type: vertical-stack
+    cards:      
+    - type: markdown
+      icon: mdi:lan-connect
+      content: >
+         <ha-icon icon="mdi:lan-connect"></ha-icon>
+         **Провідне**
+  - type: vertical-stack
+    cards:      
+    - type: markdown
+      icon: mdi:lan-connect
+      content: >
+         <ha-icon icon="mdi:access-point"></ha-icon>
+         **Access Point 1. MikroTik cAP ac RBcAPGi-5acD2nD.**         
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: device_tracker.ac1
+          name: Access Point 1
+          icon: mdi:access-point
+        - entity: sensor.mikrotikaccesspoint1_hdd_usage
+          name: Використання Диску
+    - type: horizontal-stack
+      cards:
+      - type: gauge
+        entity: sensor.mikrotikaccesspoint1_cpu_load
+        name: Access Point 1. Завантаження CPU
+        unit: '%'
+        severity:
+          green: 0
+          yellow: 60
+          red: 85
+      - type: gauge
+        entity: sensor.mikrotikaccesspoint1_memory_usage
+        name: Access Point 1. Пам'ять заповнена
+        unit: '%'
+        severity:
+          green: 0
+          yellow: 60
+          red: 85
+    - type: horizontal-stack
+      cards:            
+      # - type: history-graph
+        # title: 'AC 1. Завантаження CPU'
+        # entities:
+          # - entity: sensor.mikrotikaccesspoint1_cpu_load
+            # name: CPU
+      # - type: history-graph
+        # title: AC 1. Пам'ять заповнена
+        # entities:
+          # - entity: sensor.mikrotikaccesspoint1_memory_usage
+            # name:  Пам'ять
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        name: Access Point 1. Завантаження
+        entities:   
+          - entity: sensor.mikrotikaccesspoint1_cpu_load
+            name: CPU
+            color: "#87CEFA"
+          - entity: sensor.mikrotikaccesspoint1_memory_usage
+            name: Пам'ять
+            color: green            
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          state: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 50
+            color: "#4682B4"
+          - value: 60
+            color: "#FFA500"
+          - value: 70
+            color: "#FF4500"
+          - value: 80
+            color: "#FF0000"
+            
+###############################               
+    - type: entities
+      show_header_toggle: false
+      entities: 
+        - entity: device_tracker.server
+          name: Малінка
+          icon: mdi:raspberry-pi
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: device_tracker.wdmycloud_2
+          name: Мережеве сховище
+          icon: mdi:nas
+        
+  - type: vertical-stack
+    cards:      
+    - type: markdown
+      content: >
+         <ha-icon icon="mdi:wifi"></ha-icon>
+         **Беспровідне**
+  - type: custom:auto-entities
+    card:
+      type: entities
+      title: "Клієнт"
+      show_header_toggle: false
+    filter:
+      include: 
+        - domain: device_tracker
+        - entity_id: device_tracker.galaxy_a8_2018
+      exclude:
+        - entity_id: "*mikrotikrouter_ether*"
+        - entity_id: "*mikrotikaccesspoint1_ether*"
+        - entity_id: "device_tracker.mikrotikrouter_sfp_sfpplus1"
+#        - entity_id: "*([0-9A-Fa-f]{2}[:-_]){5}([0-9A-Fa-f]{2})*"
+        - entity_id: "device_tracker.server"
+        - entity_id: "device_tracker.raspberrypi"
+        - entity_id: "device_tracker.wdmycloud"
+        - entity_id: "device_tracker.wdmycloud_2"
+        - entity_id: "device_tracker.mikrotik_cap_ac1"
+        - entity_id: "device_tracker.ac1"
+        - attributes:
+            friendly_name: "*([0-9A-Fa-f]{2}[:-_]){5}([0-9A-Fa-f]{2})*"
+    sort:
+      method: state
+

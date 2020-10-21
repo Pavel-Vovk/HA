@@ -1,0 +1,111 @@
+title: Спальня
+#icon: far:laptop-house
+icon: mdi:bed-king
+#icon: /local/icon/office_1.png
+#icon: mdi:google-classroom
+cards:
+  - type: vertical-stack
+######################## Роутер
+    cards:      
+    - type: markdown
+      icon: mdi:clock-digital
+      content: >
+         <ha-icon icon="mdi:clock-digital"></ha-icon>
+         **Годинник спальня**
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: sensor.lywsd02_bed_room_temperature
+          name: Температура
+        - entity: sensor.lywsd02_bed_room_humidity
+          name: Вологість
+    - type: horizontal-stack
+      cards:
+        - type: markdown
+          icon: mdi:brightness-6
+          content: >
+            <ha-icon icon="mdi:brightness-6"></ha-icon>
+            **Освітлення спальня**
+
+    - type: horizontal-stack
+      cards:
+        - type: markdown
+          icon: mdi:devices
+          content: >
+            <ha-icon icon="mdi:devices"></ha-icon>
+            **Пристрої**
+
+###############################   
+  - type: vertical-stack
+    cards: 
+    - type: markdown
+      icon: mdi:leak
+      content: >
+         <ha-icon icon="mdi:leak"></ha-icon>
+         **Графікі**
+    - type: horizontal-stack
+      cards:           
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.lywsd02_bed_room_temperature
+            name: Температура
+        name: Температура
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: avg
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          average: true
+          extrema: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 10
+            color: "#4682B4"
+          - value: 30
+            color: "#228B22"
+          - value: 40
+            color: "#FFA500"
+          - value: 50
+            color: "#FF0000"
+
+###############################    
+
+
+    - type: horizontal-stack
+      cards:  
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.lywsd02_bed_room_humidity
+            name: Вологість
+        name: Вологість
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: avg
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          average: true
+          extrema: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 30
+            color: "#4682B4"
+          - value: 50
+            color: "#228B22"
+          - value: 80
+            color: "#FFA500"
+          - value: 90
+            color: "#FF0000"
+
+############################### 
