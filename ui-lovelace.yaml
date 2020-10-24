@@ -28,3 +28,7 @@ views:
   - !include /config/includes/views/esp32_room2.yaml
 ##Дані Спальня
   - !include /config/includes/views/esp32_bed_room.yaml
+##Дані Вітальня
+  - !include /config/includes/views/living_room.yaml
+##Дані Коридор
+  - !include /config/includes/views/corridor.yaml

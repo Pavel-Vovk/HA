@@ -1,6 +1,6 @@
-title: Кабінет
+title: Вітальня
 #icon: far:laptop-house
-icon: mdi:chair-rolling
+icon: mdi:sofa-single
 #icon: /local/icon/office_1.png
 #icon: mdi:google-classroom
 cards:
@@ -8,54 +8,32 @@ cards:
 ######################## Роутер
     cards:      
     - type: markdown
-      icon: mdi:cpu-32-bit
+      icon: mdi:clock-digital
       content: >
-         <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
-         **ESP32**
+         <ha-icon icon="mdi:clock-digital"></ha-icon>
+         **Годинник вітальня**
     - type: entities
       show_header_toggle: false
       entities:
-        - entity: sensor.esp32_test1_location_esp32_firmware_version
-          name: Версія прошивки
-        - entity: sensor.room2_esp32_online
-          name: В мережі
-        - entity: device_tracker.espressif_2
-          name: Місцезнахождення
-        - entity: sensor.esp32_test1_location_esp32_wi_fi
-          name: Сигнал Wi-Fi
-     
+        - entity: sensor.lywsd02_living_room_temperature
+          name: Температура
+        - entity: sensor.lywsd02_living_room_humidity
+          name: Вологість
     - type: horizontal-stack
-      cards: 
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        entities:
-          - entity: sensor.esp32_test1_location_esp32_wi_fi
-            name: Сигнал Wi-Fi
-        name:  Сигнал Wi-Fi
-        line_color: green
-        hours_to_show: 120
-        points_per_hour: 0.2
-        aggregate_func: avg
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          average: true
-          extrema: true
-          name_adaptive_color: true
-          labels: true
-          legend: true
-        # color_thresholds_transition: hard
-        color_thresholds:
-          - value: -35
-            color: "#228B22"
-          - value: -50
-            color: "#9ACD32"
-          - value: -80
-            color: "#FFA500"
-          - value: -100
-            color: "#FF0000"
+      cards:
+        - type: markdown
+          icon: mdi:brightness-6
+          content: >
+            <ha-icon icon="mdi:brightness-6"></ha-icon>
+            **Освітлення вітальня**
+
+    - type: horizontal-stack
+      cards:
+        - type: markdown
+          icon: mdi:devices
+          content: >
+            <ha-icon icon="mdi:devices"></ha-icon>
+            **Пристрої**
 
 ###############################   
   - type: vertical-stack
@@ -64,20 +42,13 @@ cards:
       icon: mdi:leak
       content: >
          <ha-icon icon="mdi:leak"></ha-icon>
-         **Сенсори**
-    - type: entities
-      show_header_toggle: false
-      entities:
-        - entity: sensor.esp32_test1_location_dh11_temperature
-          name: Температура
-        - entity: sensor.esp32_test1_location_dh11_humidity
-          name: Вологість
+         **Графікі**
     - type: horizontal-stack
-      cards:  
+      cards:           
 ####### NEW CARD ##############            
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.esp32_test1_location_dh11_temperature
+          - entity: sensor.lywsd02_living_room_temperature
             name: Температура
         name: Температура
         hours_to_show: 120
@@ -111,7 +82,7 @@ cards:
 ####### NEW CARD ##############            
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.esp32_test1_location_dh11_humidity
+          - entity: sensor.lywsd02_living_room_humidity
             name: Вологість
         name: Вологість
         hours_to_show: 120

@@ -47,7 +47,7 @@ cards:
     cards:
     - type: markdown
       content: >
-         **Графікі** 
+         **Графікі: Продуктивність** 
 
     - type: horizontal-stack
       cards:
@@ -101,7 +101,11 @@ cards:
             color: "#FF4500"
           - value: 80
             color: "#FF0000"
-            
+  - type: vertical-stack
+    cards:
+    - type: markdown
+      content: >
+         **Графікі Дисковий простір**             
 ###############################   
     - type: horizontal-stack
       cards:
@@ -122,6 +126,38 @@ cards:
             red: 2
             yellow: 6
             green: 8
+
+    - type: horizontal-stack
+      cards:
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        name: Динаміка заповненя диску
+        icon: mdi:harddisk
+        line_color: green
+        entities:
+          - entity: sensor.disk_use_percent
+            name: Динаміка заповненя диску
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          state: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 50
+            color: "#4682B4"
+          - value: 70
+            color: "#FFA500"
+          - value: 80
+            color: "#FF4500"
+          - value: 90
+            color: "#FF0000"            
+###############################          
 
     - type: horizontal-stack
       cards:
