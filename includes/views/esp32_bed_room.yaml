@@ -1,8 +1,7 @@
 title: Спальня
 #icon: far:laptop-house
-icon: mdi:bed-king
+icon: mdi:bed-queen-outline
 #icon: /local/icon/office_1.png
-#icon: mdi:google-classroom
 cards:
   - type: vertical-stack
 ######################## Роутер

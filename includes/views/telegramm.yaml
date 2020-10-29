@@ -1,0 +1,8 @@
+title: telegramm
+icon: mdi:telegram  
+cards:
+  - type: entities
+    show_header_toggle: false
+    entities:
+      - entity: script.send_message_time
+      - entity: script.system_report

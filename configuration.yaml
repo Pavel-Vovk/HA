@@ -5,6 +5,7 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: metric
   time_zone: !secret home_time_zone
+  packages: !include_dir_merge_named includes/packages
 #  customize: !include_dir_merge_list includes/customize
 #  customize: !include customize.yaml
 
@@ -63,6 +64,17 @@ mikrotik:
     arp_ping: true
     force_dhcp: true
     detection_time: 60
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegramm_bot_api_token
+    allowed_chat_ids:
+      - !secret telegramm_id_pv
+
+notify:
+  - name: telegramm_pv
+    platform: telegram
+    chat_id: !secret telegramm_id_pv
 #TODO    
 #device_tracker:
 #  - platform: snmp

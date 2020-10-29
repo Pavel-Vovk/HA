@@ -1,0 +1,81 @@
+telegramm:
+
+    script:
+    
+      send_message_time:
+        alias: "Відправка крізь сервис повідомленнь"
+        sequence:
+        - service: notify.telegramm_pv
+          data:
+            message: "Поточний час - {{ states('sensor.time') }} . Все в порядку"
+            
+      system_report:
+        alias: "Відправка звіту про стан системи"
+        sequence:
+         - service: notify.telegramm_pv
+           data:
+             message: | 
+                 {{"\U0001F4AC"}} Стан системи
+                 {{"\U0001F567"}} Звіт за {{ states('sensor.time_date') }}
+                 {{"\U0001F567"}} Останнє перезавантаження Raspberry Pi 4B 8MB {{ states('sensor.last_boot_custom')  }} тому
+                 {{"\U0001F567"}} Останнє перезавантаження Home Assistant intance {{ states('sensor.online_custom') }} тому
+                 {{"\U0001F567"}} SSD Диск заповнено на {{ states('sensor.disk_use_percent') | int }}
+
+      system_ssd_alert:
+        alias: "Відправка звіту про SSD Raspberry Pi 4B 8MB"
+        sequence:
+         - service: notify.telegramm_pv
+           data:
+             message: | 
+                 {{"\U00002757"}} Стан системи
+                 {{"\U00002757"}} Звіт за {{ states('sensor.time_date') }}
+                 {{"\U00002757"}} SSD Диск заповнено на {{ states('sensor.disk_use_percent') }}
+
+
+
+    automation:   
+    
+        - id: Звіт при старті системи
+          alias: start_message
+          initial_state: true
+          trigger:   
+             - platform: homeassistant
+               event: start          
+          action:          
+             - service: notify.telegramm_pv
+               data:
+                 message: | 
+                     {{"\U0001F4AC"}} Основний сервер Home Assistant run on Raspberry Pi 4B 8MB (192.168.88.10:8123)
+                     {{"\U0001F567"}} Зафіксований перезапуск\старт о {{ states('sensor.time_date') }} 
+                     {{"\U0001F4C3"}} Звіт о стані буде через 1 хвилину            
+             - delay: 00:01:10
+             - service: script.turn_on
+               entity_id: script.system_report
+
+
+        - id: Запит на звіт             
+          alias: send_report
+          initial_state: true
+          trigger:
+          - platform: event
+            event_type: telegram_command
+            event_data:
+              command: '/report'
+          action:
+           - service: script.turn_on
+             entity_id: 
+                - script.system_report
+
+
+        - id: Raspberry Pi 4B 8MB     
+          alias: Raspberry_Pi_4B_8MB_SSD_alert
+          trigger:
+          - platform: numeric_state
+            entity_id: sensor.disk_use_percent
+            above: 10
+          action:
+             - service: script.turn_on
+               entity_id: 
+                  - script.system_ssd_alert
+
+
