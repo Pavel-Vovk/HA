@@ -1,11 +1,27 @@
   - platform: rpi_power
     text_state: true
+  # Minimal configuration of the standard time and date sensor
+  - platform: time_date
+    display_options:
+      - 'date_time_iso'
+  # Build on the standard sensor to produce one that can be customized
+  - platform: template
+    sensors:
+      date_time_formatted:
+        friendly_name: "Date and time"
+        value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%d.%m %Y, %H:%M') }}"
+        icon_template: mdi:calendar-clock
 
   - platform: time_date
     display_options:
       - 'time'
       - 'date'
       - 'time_date'
+
+  - platform: template
+    sensors:
+      date_custom:
+        value_template: "{{ as_timestamp(states.sensor.date.state) | timestamp_custom('%d.%m.%Y') }}"
 
   - platform: systemmonitor
     resources:

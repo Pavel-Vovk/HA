@@ -13,7 +13,7 @@ cards:
     - type: entities
       show_header_toggle: false
       entities:
-        - entity: sensor.date
+        - entity: sensor.date_custom
           name: Дата
           icon: mdi:calendar-check-outline
         - entity: sensor.time

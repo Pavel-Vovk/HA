@@ -75,6 +75,8 @@ notify:
   - name: telegramm_pv
     platform: telegram
     chat_id: !secret telegramm_id_pv
+
+input_text: !include_dir_merge_named includes/inputs
 #TODO    
 #device_tracker:
 #  - platform: snmp

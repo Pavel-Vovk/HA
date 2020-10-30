@@ -1,5 +1,13 @@
 telegramm:
 
+    # input_text:
+    #   raspberry_pi_4b_8mh_1_host:
+    #     initial: !secret raspberry_pi_4b_8mh_1_host
+
+    # input_text:
+    #   ha_ui_port:
+    #     initial: !secret ha_ui_port     
+
     script:
     
       send_message_time:
@@ -7,7 +15,7 @@ telegramm:
         sequence:
         - service: notify.telegramm_pv
           data:
-            message: "Поточний час - {{ states('sensor.time') }} . Все в порядку"
+            message: "Поточний час - {{ states('sensor.date_time_formatted') }} . Все в порядку"
             
       system_report:
         alias: "Відправка звіту про стан системи"
@@ -16,10 +24,10 @@ telegramm:
            data:
              message: | 
                  {{"\U0001F4AC"}} Стан системи
-                 {{"\U0001F567"}} Звіт за {{ states('sensor.time_date') }}
-                 {{"\U0001F567"}} Останнє перезавантаження Raspberry Pi 4B 8MB {{ states('sensor.last_boot_custom')  }} тому
-                 {{"\U0001F567"}} Останнє перезавантаження Home Assistant intance {{ states('sensor.online_custom') }} тому
-                 {{"\U0001F567"}} SSD Диск заповнено на {{ states('sensor.disk_use_percent') | int }}
+                 {{"\U0001F552"}} Звіт за {{ states('sensor.date_time_formatted') }}
+                 {{"\U0001F552"}} Останнє перезавантаження Raspberry Pi 4B 8MB {{ (states('sensor.last_boot_custom') | replace (' ', '') | replace ('\n', '') | replace ('.', '. ')) }} тому
+                 {{"\U0001F552"}} Останнє перезавантаження Home Assistant {{ (states('sensor.online_custom') | replace (' ', '') | replace ('\n', '') | replace ('.', '. ')) }} тому
+                 {{"\U0001F4BD"}} SSD Диск заповнено на {{ states('sensor.disk_use_percent') }} %
 
       system_ssd_alert:
         alias: "Відправка звіту про SSD Raspberry Pi 4B 8MB"
@@ -27,9 +35,9 @@ telegramm:
          - service: notify.telegramm_pv
            data:
              message: | 
-                 {{"\U00002757"}} Стан системи
-                 {{"\U00002757"}} Звіт за {{ states('sensor.time_date') }}
-                 {{"\U00002757"}} SSD Диск заповнено на {{ states('sensor.disk_use_percent') }}
+                 {{"\U00002757"}} Стан вільного міісця на SSD
+                 {{"\U0001F552"}} Звіт за {{ states('sensor.date_time_formatted') }}
+                 {{"\U0001F4BD"}} SSD Диск заповнено на {{ states('sensor.disk_use_percent') }}
 
 
 
@@ -45,9 +53,9 @@ telegramm:
              - service: notify.telegramm_pv
                data:
                  message: | 
-                     {{"\U0001F4AC"}} Основний сервер Home Assistant run on Raspberry Pi 4B 8MB (192.168.88.10:8123)
-                     {{"\U0001F567"}} Зафіксований перезапуск\старт о {{ states('sensor.time_date') }} 
-                     {{"\U0001F4C3"}} Звіт о стані буде через 1 хвилину            
+                     {{"\U0001F4AC"}} Основний сервер Home Assistant запущений на Raspberry Pi 4B 8MB 1 --> {{ states('input_text.traspberry_pi_4b_8mb_1_host') }}:{{ states('input_text.ha_ui_port') }}
+                     {{"\U0001F552"}} Зафіксований перезапуск/старт о {{ states('sensor.date_time_formatted') }} 
+                     {{"\U0001F4C3"}} Звіт о стані буде через 1 хвилину 
              - delay: 00:01:10
              - service: script.turn_on
                entity_id: script.system_report
@@ -69,6 +77,7 @@ telegramm:
 
         - id: Raspberry Pi 4B 8MB     
           alias: Raspberry_Pi_4B_8MB_SSD_alert
+          initial_state: true
           trigger:
           - platform: numeric_state
             entity_id: sensor.disk_use_percent
