@@ -82,6 +82,8 @@ telegramm:
           - platform: numeric_state
             entity_id: sensor.disk_use_percent
             above: 10
+            for:
+              minutes: 30
           action:
              - service: script.turn_on
                entity_id: 
