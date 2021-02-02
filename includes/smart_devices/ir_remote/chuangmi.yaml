@@ -41,9 +41,6 @@
         command:
           - raw:nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
 
-
-# IR Remote Вітальня
-
 # IR Remote Гостьова
 # model 
 
@@ -51,13 +48,34 @@
 
 #############################################################
 
-### LG ON:          nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
-### LG OFF:         nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
-### LG volume_up:   nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDA08GfwB/AH8LjwY/AI8AjwCKmEAA=
-### LG volume_down: nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDAa8GjwB/AH8AfwmPBa8AjwCKmEAA=
-### lg volume_mute: nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
+### LG ON:                nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+### LG OFF:               nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+### LG volume_up:         nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDA08GfwB/AH8LjwY/AI8AjwCKmEAA=
+### LG volume_down:       nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDAa8GjwB/AH8AfwmPBa8AjwCKmEAA=
+### LG volume_mute:       nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
+### LG channel_up:        
+### LG channel_down:      
+### LG channel_0:         
+### LG channel_1:         
+### LG channel_2:         
+### LG channel_3:         
+### LG channel_4:         
+### LG channel_5:         
+### LG channel_6:         
+### LG channel_7:         
+### LG channel_8:         
+### LG channel_9:         
+### LG arrow_back:        
+### LG arrow_forward:     
+### LG arrow_up:          
+### LG ok:
+### LG list:
+### LG info:
+### LG status:
+### LG source:
 
 # pvovk@raspberrypi:~ $ miiocli chuangmiir --ip 192.168.88.51 --token 32a9765e9d02c400e2754dc96691b76c play nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
 # Playing the supplied command
 # ['ok']
 # https://github.com/madmicio/LG-WebOS-Remote-Control
+# echo -n 'nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==' | base64 -d | od -t x2 -An
