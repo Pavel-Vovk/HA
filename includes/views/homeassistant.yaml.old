@@ -1,0 +1,262 @@
+title: Данні Сервера HA
+icon: mdi:home-assistant
+
+cards:
+
+  - type: vertical-stack
+    cards:
+    
+    - type: markdown
+      content: >
+         **Поточний Стан Home Assistant/Raspberry 4B**
+         
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: sensor.date_custom
+          name: Дата
+          icon: mdi:calendar-check-outline
+        - entity: sensor.time
+          name: Поточний Час 
+          icon: mdi:clock-outline
+        - entity: sensor.last_boot_custom
+          name: Raspberry Pi 4B Онлайн
+        - entity: sensor.online_custom
+          name: Home Assistant Онлайн
+
+    - type: markdown
+      content: >
+         **Резервне кпіювання**
+         
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: sensor.last_google_backup_train
+          name: Час Останнього вдалого бекапаку
+        - entity: sensor.snapshots_in_google_drive_train
+        - entity: sensor.snapshots_in_hassio_train
+
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: sensor.maria_db_size
+          name: Загальний об'єм Maria DB
+          icon: mdi:database
+
+  - type: vertical-stack
+    cards:
+    - type: markdown
+      content: >
+         **Графікі: Продуктивність** 
+
+    - type: horizontal-stack
+      cards:
+       - type: gauge
+         name: Завантаження CPU
+         unit: '%'
+         entity: sensor.processor_use
+         severity:
+            green: 0
+            yellow: 60
+            red: 85
+         
+       - type: gauge
+         name: Завантаження ОЗУ
+         unit: '%'
+         entity: sensor.memory_use_percent
+         severity:
+            green: 0
+            yellow: 60
+            red: 85
+    - type: horizontal-stack
+      cards:
+      - type: custom:flex-horseshoe-card
+        entities:
+        - entity: sensor.memory_use_percent
+          decimals: 1
+          tap_action:
+            action: more-info
+          icon: mdi:memory
+          name: 'RAM Usage'
+          area: Test_Area
+        show:
+          horseshoe_style: 'lineargradient'
+        layout:
+          hlines:
+            - id: 0
+              xpos: 50
+              ypos: 38
+              length: 40
+              styles:
+                # - stroke: var(--theme-gradient-color-01);
+                - stroke-width: 5;
+                - opacity: 0.9;
+                - stroke-linecap: round;
+          vlines:
+            - id: 0
+              xpos: 50
+              ypos: 56
+              length: 20
+              styles:
+                - stroke: white;
+                - opacity: 0.5;
+                - stroke-width: 2;
+                - stroke-linecap: round;
+          states:
+            - id: 0
+              entity_index: 0
+              xpos: 50
+              ypos: 30
+              styles:
+                - font-size: 3em;
+                - opacity: 0.9;
+          names:
+            - id: 0
+              entity_index: 0
+              xpos: 50
+              ypos: 100
+              styles:
+                - font-size: 1.2em;
+        horseshoe_scale:
+          min: 0
+          max: 100
+          # color: 'var(--primary-background-color)'
+        horseshoe_state:
+          color: '#FFDA8A'
+        color_stops:
+          0: '#FFF6E3'
+          10: '#FFE9B9'
+          20: '#FFDA8A'
+          30: '#FFCB5B'
+          40: '#FFBF37'
+          50: '#ffb414'
+          60: '#FFAD12'
+          70: '#FFA40E'
+          80: '#FF9C0B' 
+          90: '#FF8C06'
+    - type: horizontal-stack
+      cards:
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        name: Raspberry Pi 4B 8MB. Завантаження
+        entities:
+          - entity: sensor.processor_use
+            name: CPU
+            color: "#87CEFA"
+          - entity: sensor.memory_use_percent
+            name: Пам'ять
+            color: green            
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          state: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 50
+            color: "#4682B4"
+          - value: 60
+            color: "#FFA500"
+          - value: 70
+            color: "#FF4500"
+          - value: 80
+            color: "#FF0000"
+  - type: vertical-stack
+    cards:
+    - type: markdown
+      content: >
+         **Графікі Дисковий простір**             
+###############################   
+    - type: horizontal-stack
+      cards:
+       - type: gauge
+         name: Диск заповнений
+         unit: '%'
+         entity: sensor.disk_use_percent
+         severity:
+            green: 0
+            yellow: 60
+            red: 85    
+            
+       - type: gauge
+         name: Вільне місце
+         unit: 'ГБ'
+         entity: sensor.disk_free
+         severity:
+            red: 2
+            yellow: 6
+            green: 8
+
+    - type: horizontal-stack
+      cards:
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        name: Динаміка заповненя диску
+        icon: mdi:harddisk
+        line_color: green
+        entities:
+          - entity: sensor.disk_use_percent
+            name: Динаміка заповненя диску
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          state: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 50
+            color: "#4682B4"
+          - value: 70
+            color: "#FFA500"
+          - value: 80
+            color: "#FF4500"
+          - value: 90
+            color: "#FF0000"            
+###############################          
+
+    - type: horizontal-stack
+      cards:
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        name: Maria DB. Об'єм
+        icon: mdi:database
+        entities:
+          - entity: sensor.maria_db_size
+            name: Size
+            color: "#87CEFA"          
+        hours_to_show: 120
+        points_per_hour: 0.2
+        aggregate_func: max
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          state: true
+          labels: true
+          legend: true
+        color_thresholds:
+          - value: 500
+            color: "#4682B4"
+          - value: 700
+            color: "#FFA500"
+          - value: 900
+            color: "#FF4500"
+          - value: 1000
+            color: "#FF0000"            
+###############################          
+    # - type: history-graph
+    #   entities:
+    #    - entity: sensor.maria_db_size
+    #      name: Maria DB

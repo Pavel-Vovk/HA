@@ -9,11 +9,12 @@ resources:
   # adding the card-mod plugin enable an advanced card look configuration
   - url: /hacsfiles/lovelace-card-mod/card-mod.js
     type: module
-
   - url: /hacsfiles/lovelace-auto-entities/auto-entities.js
     type: module
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
-    type: module    
+    type: module
+  - url: /hacsfiles/flex-horseshoe-card/flex-horseshoe-card.js
+    type: module 
 title: !secret home_title
 views:
 ##Погода

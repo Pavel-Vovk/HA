@@ -1,0 +1,74 @@
+  # badroom_tv_turn_off:
+  #   sequence:
+  #     - service: remote.send_command
+  #       entity_id: remote.ir_remote_badroom
+  #       data:
+  #         command:
+  #           - 'JgBGAJOVEDoQOhA6DxYPFhAVEBUQFRA6ETkROREUERQRFBEUEBUQFREUERQRORE5EBUQFRE5ETkRORE5ERUQFRA6DzsPFhAADQUAAA=='
+  # badroom_tv_turn_on:
+  #   sequence:
+  #     - service: remote.send_command
+  #       entity_id: remote.ir_remote_badroom
+  #       data:
+  #         command:
+  #           - 'JgBGAJKVETkRORA6ERQRFBEUERQRFBE5ETkQOhAVEBUQFREUEBUQOhEUERQRORE5EBURFBA6EBUQOhE5EBUQFRA6EDoRFBEADQUAAA=='
+  # 
+
+  
+####################################################################################################
+  badroom_tv_turn_on:
+#    alias: TV Turn On
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_badroom'
+        data:
+          command:
+            - 'tv_turn_on'
+  badroom_tv_turn_off:
+#    alias: TV Turn Off
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_badroom'
+        data:
+          command:
+            - 'tv_turn_off'
+
+
+####################################################################################################
+  livingroom_tv_turn_on:
+#    alias: TV Turn On
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_livingroom'
+        data:
+          command:
+            - 'tv_turn_on'
+  livingroom_tv_turn_off:
+#    alias: TV Turn Off
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_livingroom'
+        data:
+          command:
+            - 'tv_turn_off'
+  livingroom_tv_volume_up:
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_livingroom'
+        data:
+          command:
+            - 'tv_volume_up'
+  livingroom_tv_volume_down:
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_livingroom'
+        data:
+          command:
+            - 'tv_volume_down'
+  livingroom_tv_volume_mute:
+    sequence:
+      - service: remote.send_command
+        entity_id: 'remote.ir_remote_livingroom'
+        data:
+          command:
+            - 'tv_volume_mute'

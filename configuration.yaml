@@ -12,6 +12,9 @@ homeassistant:
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 #
+
+# Example configuration.yaml entry
+
 frontend:
   themes: !include_dir_merge_named themes
   javascript_version: auto
@@ -83,3 +86,14 @@ input_text: !include_dir_merge_named includes/inputs
 #    host:
 #    community: public
 #    baseoid: 1.3.6.1.4.1.14988.1.1.1.2.1.1
+# IR Remote Control
+# https://www.home-assistant.io/integrations/xiaomi_miio/#xiaomi-ir-remote
+# model: chuangmi.remote.h102c01
+remote: !include_dir_merge_list includes/smart_devices/ir_remote
+  # - platform: xiaomi_miio
+  #   host: !secret ir_remote_badroom_ip
+  #   token: !secret ir_remote_badroom_token
+  #   name: ir_remote_badroom
+
+device_tracker: !include includes/device_tracker.yaml
+media_player: !include_dir_merge_list includes/media_players

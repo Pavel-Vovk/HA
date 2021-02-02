@@ -2,10 +2,25 @@
   alias: 00_purge_everyday
   initial_state: true
   trigger:
-    - platform: time
-      at: '01:00:00'
+    - platform: template
+      value_template: '{{now().weekday() == 1 }}'
+
+    # - platform: template
+    #   value_template: '{{now().day % 10 == 1 }}'
+
+    # - platform: time
+    #   at: '01:00:00'
+
+    # - platform: time_date
+    #   at: "3:00:00"
+    #   weekday: 
+    #     - sun
+
+    # - platform: time_pattern
+    # # You can also match on interval. This will match every 5 minutes
+    #   minutes: "/1440" # 10 days
   action:
     - service: recorder.purge
       data:
-          keep_days: 3
+          keep_days: 90
           repack: true

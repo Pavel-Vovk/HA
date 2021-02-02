@@ -34,6 +34,33 @@ cards:
             <ha-icon icon="mdi:devices"></ha-icon>
             **Пристрої**
 
+    - type: horizontal-stack
+      cards:
+        - type: entities
+          show_header_toggle: false
+          entities:
+            - entity: remote.ir_remote_badroom
+            - entity: device_tracker.chuangmi_remote_h102c01_mibtbf20_2
+              name: Додатково
+    - type: horizontal-stack
+      cards:
+        - type: entity-button
+          name: Turn On TV
+          entity: remote.ir_remote_badroom
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              command: tv_turn_on
+              entity_id: remote.ir_remote_badroom
+          hold_action:
+            action: more-info
+          show_icon: true
+          show_name: true
+
+
+
+
 ###############################   
   - type: vertical-stack
     cards: 
