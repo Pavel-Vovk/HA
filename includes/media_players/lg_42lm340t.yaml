@@ -1,0 +1,34 @@
+# LG 42LM340T
+  - platform: universal
+    name: lg_42lm340t
+    commands:
+      turn_on:
+        service: remote.send_command
+        data:
+          entity_id: remote.ir_remote_livingroom
+          command:
+            - tv_turn_on
+      turn_off:
+        service: remote.send_command
+        data:
+          entity_id: remote.ir_remote_livingroom
+          command:
+            - tv_turn_off
+      volume_up:
+        service: remote.send_command
+        data:
+          entity_id: remote.ir_remote_livingroom
+          command: 
+            - tv_volume_up
+      volume_down:
+        service: remote.send_command
+        data:
+          entity_id: remote.ir_remote_livingroom
+          command: 
+            - tv_volume_down
+      volume_mute:
+        service: remote.send_command
+        data:
+          entity_id: remote.ir_remote_livingroom
+          command: 
+            - tv_volume_mute

@@ -1,6 +1,32 @@
-  - platform: rpi_power
-    text_state: true
-  # Minimal configuration of the standard time and date sensor
+  # - platform: rpi_power
+  #   text_state: true
+  # # Minimal configuration of the standard time and date sensor
+  - platform: command_line
+    name: "Raspberry Pi 4 8GB. CPU Температура"
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    # If errors occur, make sure configuration file is encoded as UTF-8
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) | round(1) }}'
+
+  - platform: command_line
+    name: "Raspberry Pi 4 8GB. Total RAM"
+    command: "free -m | awk '/Mem:/ {print $2}'"
+    # If errors occur, make sure configuration file is encoded as UTF-8
+    unit_of_measurement: "MB"
+
+  - platform: command_line
+    name: "Raspberry Pi 4 8GB. Used RAM"
+    command: "free -m | awk '/Mem:/ {print $3}'"
+    # If errors occur, make sure configuration file is encoded as UTF-8
+    unit_of_measurement: "MB"
+
+  - platform: command_line
+    name: "Raspberry Pi 4 8GB. Available RAM"
+    command: "free -m | awk '/Mem:/ {print $6}'"
+    # If errors occur, make sure configuration file is encoded as UTF-8
+    unit_of_measurement: "MB"
+
+
   - platform: time_date
     display_options:
       - 'date_time_iso'
@@ -26,12 +52,19 @@
   - platform: systemmonitor
     resources:
     - type: processor_use
+    - type: processor_temperature
     - type: disk_use_percent
       arg: /
-    - type: memory_use_percent
-    - type: last_boot
     - type: disk_free
       arg: /
+    - type: disk_use
+      arg: /
+    - type: memory_use_percent
+    - type: memory_use
+    - type: memory_free
+    - type: last_boot
+    - type: ipv4_address
+      arg: eth0
       
   - platform: sql
     db_url: mysql://hass:hass@core-mariadb/homeassistant?charset=utf8
@@ -41,6 +74,13 @@
         column: 'value'
         unit_of_measurement: MB
 
+  - platform: template
+    sensors:
+      disk_total:
+        friendly_name: "Розмір диску"
+        value_template: "{{ (states('sensor.disk_free') | float ) + (states('sensor.disk_use') | float ) | round(1) }}"
+        unit_of_measurement: "GiB"
+
 # Время с последней перезагрузки
   - platform: template
     sensors:
@@ -49,11 +89,10 @@
         entity_id:
           - sensor.time
         value_template: >
-           {% set uptime = as_timestamp (now()) -as_timestamp(states.sensor.last_boot.state) | int %}
+           {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.last_boot')) | int %}
            {% set minutes = (( uptime % 3600) / 60) | int %}
            {% set hours = ((uptime % 86400) / 3600) | int %}
            {% set days = (uptime / 86400) | int %}
-
              {% if uptime < 1 %}
                Меньше хвилини
              {% else %}

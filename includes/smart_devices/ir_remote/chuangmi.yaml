@@ -1,0 +1,63 @@
+# IR Remote Спальня 
+# model chuangmi.remote.h102c01, CMYCq01C
+# https://community.home-assistant.io/t/xiaomi-ir-remote-commands/167698/5
+# https://community.home-assistant.io/t/xiaomi-ir-remote-commands/167698/11
+# https://github.com/smartHomeHub/SmartIR/blob/master/codes/media_player/1060.json
+# https://github.com/smartHomeHub
+  - platform: xiaomi_miio
+    name: ir_remote_badroom
+    host: !secret ir_remote_badroom_ip
+    token: !secret ir_remote_badroom_token
+    #   badroom_tv_turn_off:
+    #     command:
+    #       - raw:JgBGAJOVEDoQOhA6DxYPFhAVEBUQFRA6ETkROREUERQRFBEUEBUQFREUERQRORE5EBUQFRE5ETkRORE5ERUQFRA6DzsPFhAADQUAAA==
+    commands: 
+      tv_turn_on:
+        command:
+          - raw:JgCMAJOWEDkTNhM1FBETERMREBQQFBE3FDUUNhMREBMSExAUExISEBQ1FBAUERAUEBQRExMSEjUUERM1ETgRORA5EjYUNhMABgCWkhQ1FDUROBQSEhETERMREBQQORA5EjgSEBQRExETERAUEBQQOhISEhETERMREBQQFBA5ERMTNRQ1FDUUNRE4ETkQAA0FAAAAAAAAAAAAAAAA
+      tv_turn_off:
+        command:
+          - raw:JgBGAJOVEDoQOhA6DxYPFhAVEBUQFRA6ETkROREUERQRFBEUEBUQFREUERQRORE5EBUQFRE5ETkRORE5ERUQFRA6DzsPFhAADQUAAA
+# IR Remote Вітальня
+# model chuangmi.remote.h102c01, CMYCq01C
+  - platform: xiaomi_miio
+    name: ir_remote_livingroom
+    host: !secret ir_remote_livingroom_ip
+    token: !secret ir_remote_livingroom_token
+    commands: 
+      tv_turn_on:
+        command:
+          - raw:nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+      tv_turn_off:
+        command:
+          - raw:nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+      tv_volume_up:
+        command:
+          - raw:nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDA08GfwB/AH8LjwY/AI8AjwCKmEAA=
+      tv_volume_down:
+        command:
+          - raw:nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDAa8GjwB/AH8AfwmPBa8AjwCKmEAA=
+      tv_volume_mute:
+        command:
+          - raw:nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
+
+
+# IR Remote Вітальня
+
+# IR Remote Гостьова
+# model 
+
+
+
+#############################################################
+
+### LG ON:          nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+### LG OFF:         nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+### LG volume_up:   nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDA08GfwB/AH8LjwY/AI8AjwCKmEAA=
+### LG volume_down: nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDAa8GjwB/AH8AfwmPBa8AjwCKmEAA=
+### lg volume_mute: nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
+
+# pvovk@raspberrypi:~ $ miiocli chuangmiir --ip 192.168.88.51 --token 32a9765e9d02c400e2754dc96691b76c play nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+# Playing the supplied command
+# ['ok']
+# https://github.com/madmicio/LG-WebOS-Remote-Control
