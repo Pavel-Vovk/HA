@@ -14,10 +14,10 @@
     commands: 
       tv_turn_on:
         command:
-          - raw:JgCMAJOWEDkTNhM1FBETERMREBQQFBE3FDUUNhMREBMSExAUExISEBQ1FBAUERAUEBQRExMSEjUUERM1ETgRORA5EjYUNhMABgCWkhQ1FDUROBQSEhETERMREBQQORA5EjgSEBQRExETERAUEBQQOhISEhETERMREBQQFBA5ERMTNRQ1FDUUNRE4ETkQAA0FAAAAAAAAAAAAAAAA
+          - raw:mkym0wlk0msxmEsmoBBTGbTkAgpqAR4BBgPGAOgB5zMAegF3AHaYzcEswGCBC8DrwAym4LXAHuA+wHEgUeCR4HHhaeEX4BHgEeAQswgA
       tv_turn_off:
         command:
-          - raw:JgBGAJOVEDoQOhA6DxYPFhAVEBUQFRA6ETkROREUERQRFBEUEBUQFREUERQRORE5EBUQFRE5ETkRORE5ERUQFRA6DzsPFhAADQUAAA
+          - raw:mkym0wlk0msxmEsmoBBTGbTkAgpqAR4BBgPGAOgB5zMAegF3AHaYzcEswGCBC8DrwAym4LXAHuA+wHEgUeCR4HHhaeEX4BHgEeAQswgA
 # IR Remote Вітальня
 # model chuangmi.remote.h102c01, CMYCq01C
   - platform: xiaomi_miio
@@ -73,6 +73,12 @@
 ### LG info:
 ### LG status:
 ### LG source:
+
+
+#############################
+# Samsung
+### Samsung ON:        mkym0wlk0msxmEsmoBBTGbTkAgpqAR4BBgPGAOgB5zMAegF3AHaYzcEswGCBC8DrwAym4LXAHuA+wHEgUeCR4HHhaeEX4BHgEeAQswgA
+### Samsung OFF:       mkym0wlk0msxmEsmoBBTGbTkAgpqAR4BBgPGAOgB5zMAegF3AHaYzcEswGCBC8DrwAym4LXAHuA+wHEgUeCR4HHhaeEX4BHgEeAQswgA
 
 # pvovk@raspberrypi:~ $ miiocli chuangmiir --ip 192.168.88.51 --token 32a9765e9d02c400e2754dc96691b76c play nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
 # Playing the supplied command
