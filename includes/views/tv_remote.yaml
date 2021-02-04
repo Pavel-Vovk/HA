@@ -1,5 +1,53 @@
 title: Керування ТВ
 icon: mdi:television
+# cards: 
+#   - type: vertical-stack
+# ######################## LG 42LM340T OLD VIEW
+#     cards:      
+#     - type: markdown
+#       icon: mdi:lan-connect
+#       content: >
+#          <ha-icon icon="mdi:television"></ha-icon>
+#          **Телевізор. LG 42LM340T**
+#     - type: horizontal-stack
+#       cards:
+#         - type: entity-button
+#           entity: remote.ir_remote_livingroom
+#           show_icon: false
+#           show_state: false
+#           show_name: false
+#         - type: entity-button          
+#           name: Turn Volume Mute
+#           entity: remote.ir_remote_livingroom
+#           icon: mdi:volume-off 
+#           tap_action:
+#             action: call-service
+#             service: remote.send_command
+#             service_data:
+#               command: tv_volume_mute
+#               entity_id: remote.ir_remote_livingroom
+#           show_icon: true
+#         - type: entity-button
+#           entity: remote.ir_remote_livingroom
+#           show_icon: false
+#           show_state: false
+#           show_name: false
+#         - type: entity-button          
+#           name: Turn NO/OFF
+#           entity: remote.ir_remote_livingroom
+#           icon: mdi:power
+#           tap_action:
+#             action: call-service
+#             service: remote.send_command
+#             service_data:
+#               command: tv_turn_on
+#               entity_id: remote.ir_remote_livingroom
+#           show_icon: true
+#         - type: entity-button
+#           entity: remote.ir_remote_livingroom
+#           show_icon: false
+#           show_state: false
+#           show_name: false
 cards:
   - type: vertical-stack
 ######################## LG 42LM340T 
@@ -11,53 +59,245 @@ cards:
          **Телевізор. LG 42LM340T**
     - type: horizontal-stack
       cards:
-        - type: entity-button
-          entity: remote.ir_remote_livingroom
-          show_icon: false
-          show_state: false
-          show_name: false
-        - type: entity-button          
-          name: Turn Volume Mute
-          entity: remote.ir_remote_livingroom
-          icon: mdi:volume-off 
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          ## TODO: Update the status, implement the status case  
+          color_type: card
+          icon: mdi:volume-off
           tap_action:
             action: call-service
             service: remote.send_command
             service_data:
-              command: tv_volume_mute
               entity_id: remote.ir_remote_livingroom
-          show_icon: true
-        - type: entity-button
-          entity: remote.ir_remote_livingroom
-          show_icon: false
-          show_state: false
-          show_name: false
-        - type: entity-button          
-          name: Turn NO/OFF
-          entity: remote.ir_remote_livingroom
+              command: tv_volume_mute
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
           icon: mdi:power
           tap_action:
             action: call-service
             service: remote.send_command
             service_data:
-              command: tv_turn_on
               entity_id: remote.ir_remote_livingroom
-          show_icon: true
-        - type: entity-button
-          entity: remote.ir_remote_livingroom
-          show_icon: false
-          show_state: false
-          show_name: false
-cards:
-  - type: vertical-stack
-######################## LG 42LM340T 
-    cards:      
-    - type: markdown
-      icon: mdi:lan-connect
-      content: >
-         <ha-icon icon="mdi:television"></ha-icon>
-         **Телевізор. LG 42LM340T**
-
-
-
-  
+              command: tv_turn_on
+        - type: 'custom:button-card'
+          color_type: blank-card
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-1
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_1
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-2
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_2
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-3
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_3
+        - type: 'custom:button-card'
+          color_type: blank-card
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-4
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_4
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-5
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_5
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-6
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_6
+        - type: 'custom:button-card'
+          color_type: blank-card
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-7
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_7
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-8
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_8
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-9
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_9
+        - type: 'custom:button-card'
+          color_type: blank-card
+    - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:numeric-0
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_0
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: blank-card
+      - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:arrow-up-drop-circle-outline
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_up
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:menu-up
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_menu_up
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:volume-plus
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_volume_up
+      - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:arrow-down-drop-circle-outline
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_channel_down
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:menu-left
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_menu_left
+        - type: 'custom:button-card'
+          color_type: card
+          name: OK
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_menu_ok
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:menu-right
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_menu_right
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:volume-minus
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_volume_down
+      - type: horizontal-stack
+      cards:
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: card
+          icon: mdi:menu-down
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: remote.ir_remote_livingroom
+              command: tv_menu_down
+        - type: 'custom:button-card'
+          color_type: blank-card
+        - type: 'custom:button-card'
+          color_type: blank-card

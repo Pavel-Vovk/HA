@@ -15,6 +15,10 @@ resources:
     type: module
   - url: /hacsfiles/flex-horseshoe-card/flex-horseshoe-card.js
     type: module 
+  - url: /hacsfiles/flex-horseshoe-card/flex-horseshoe-card.js
+    type: module
+  - url: /hacsfiles/button-card/button-card.js
+    type: module    
 title: !secret home_title
 views:
 ##Погода
