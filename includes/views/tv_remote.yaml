@@ -202,102 +202,103 @@ cards:
           color_type: blank-card
         - type: 'custom:button-card'
           color_type: blank-card
-      - type: horizontal-stack
+    - type: horizontal-stack
       cards:
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:arrow-up-drop-circle-outline
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_channel_up
-        - type: 'custom:button-card'
-          color_type: blank-card
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:menu-up
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_menu_up
-        - type: 'custom:button-card'
-          color_type: blank-card
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:volume-plus
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_volume_up
-      - type: horizontal-stack
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:arrow-up-drop-circle-outline
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_channel_up
+      - type: 'custom:button-card'
+        color_type: blank-card
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:menu-up
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_menu_up
+      - type: 'custom:button-card'
+        color_type: blank-card
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:volume-plus
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_volume_up
+    - type: horizontal-stack
       cards:
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:arrow-down-drop-circle-outline
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_channel_down
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:menu-left
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_menu_left
-        - type: 'custom:button-card'
-          color_type: card
-          name: OK
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_menu_ok
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:menu-right
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_menu_right
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:volume-minus
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_volume_down
-      - type: horizontal-stack
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:arrow-down-drop-circle-outline
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_channel_down
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:menu-left
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_menu_left
+      - type: 'custom:button-card'
+        color_type: card
+        name: OK
+        spect_ratio: 1/1
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_menu_ok
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:menu-right
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_menu_right
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:volume-minus
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_volume_down
+    - type: horizontal-stack
       cards:
-        - type: 'custom:button-card'
-          color_type: blank-card
-        - type: 'custom:button-card'
-          color_type: blank-card
-        - type: 'custom:button-card'
-          color_type: card
-          icon: mdi:menu-down
-          tap_action:
-            action: call-service
-            service: remote.send_command
-            service_data:
-              entity_id: remote.ir_remote_livingroom
-              command: tv_menu_down
-        - type: 'custom:button-card'
-          color_type: blank-card
-        - type: 'custom:button-card'
-          color_type: blank-card
+      - type: 'custom:button-card'
+        color_type: blank-card
+      - type: 'custom:button-card'
+        color_type: blank-card
+      - type: 'custom:button-card'
+        color_type: card
+        icon: mdi:menu-down
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: remote.ir_remote_livingroom
+            command: tv_menu_down
+      - type: 'custom:button-card'
+        color_type: blank-card
+      - type: 'custom:button-card'
+        color_type: blank-card
