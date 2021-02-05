@@ -65,6 +65,9 @@ cards:
           ## TODO: Update the status, implement the status case  
           color_type: card
           icon: mdi:volume-off
+          styles:
+            card:
+              - background-color: '#FFD700'
           tap_action:
             action: call-service
             service: remote.send_command
@@ -76,6 +79,9 @@ cards:
         - type: 'custom:button-card'
           color_type: card
           icon: mdi:power
+          styles:
+            card:
+              - background-color: '#FF0000'
           tap_action:
             action: call-service
             service: remote.send_command
@@ -190,6 +196,9 @@ cards:
         - type: 'custom:button-card'
           color_type: card
           icon: mdi:format-list-numbered
+          styles:
+            card:
+              - background-color: '#D8BFD8'
           tap_action:
             action: call-service
             service: remote.send_command
@@ -208,6 +217,9 @@ cards:
         - type: 'custom:button-card'
           color_type: card
           icon: mdi:backburger
+          styles:
+            card:
+              - background-color: '#D8BFD8'
           tap_action:
             action: call-service
             service: remote.send_command
@@ -222,6 +234,9 @@ cards:
         color_type: card
         icon: mdi:arrow-up-drop-circle-outline
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#ADD8E6'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -232,6 +247,9 @@ cards:
         color_type: card
         icon: mdi:cog-outline
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#90EE90'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -242,6 +260,9 @@ cards:
         color_type: card
         icon: mdi:menu-up
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#A9A9A9'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -252,6 +273,9 @@ cards:
         color_type: card
         icon: mdi:home
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#90EE90'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -262,6 +286,9 @@ cards:
         color_type: card
         icon: mdi:volume-plus
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#ADD8E6'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -276,7 +303,10 @@ cards:
         color_type: card
         icon: mdi:menu-left
         aspect_ratio: 1/1
-        tap_action:
+        styles:
+          card:
+            - background-color: '#A9A9A9'
+          tap_action:
           action: call-service
           service: remote.send_command
           service_data:
@@ -286,6 +316,11 @@ cards:
         color_type: card
         name: OK
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#A9A9A9'
+          name:
+            - font-weight: bold
         tap_action:
           action: call-service
           service: remote.send_command
@@ -296,6 +331,9 @@ cards:
         color_type: card
         icon: mdi:menu-right
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#A9A9A9'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -310,6 +348,9 @@ cards:
         color_type: card
         icon: mdi:arrow-down-drop-circle-outline
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#ADD8E6'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -320,6 +361,9 @@ cards:
         color_type: card
         icon: mdi:undo-variant
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#90EE90'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -330,6 +374,9 @@ cards:
         color_type: card
         icon: mdi:menu-down
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#A9A9A9'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -340,6 +387,9 @@ cards:
         color_type: card
         icon: mdi:exit-run
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#90EE90'
         tap_action:
           action: call-service
           service: remote.send_command
@@ -350,6 +400,9 @@ cards:
         color_type: card
         icon: mdi:volume-minus
         aspect_ratio: 1/1
+        styles:
+          card:
+            - background-color: '#ADD8E6'
         tap_action:
           action: call-service
           service: remote.send_command
