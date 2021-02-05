@@ -15,4 +15,5 @@ The docker have been running on Raspberry PI 4B 8 Gb.
 - LG TV 42LM340T TV Remote Control
 - Samsung TV
 - Xiaomi Mijia Digital Clock 3.7" E-INK Screen Temperature Humidity Sensor Meter (LYWSD02) 2ps
+- TBD
 
