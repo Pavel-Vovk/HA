@@ -40,7 +40,75 @@
       tv_volume_mute:
         command:
           - raw:nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
-
+      tv_channel_up:
+        command:
+          - raw:nMxnEwlk0mswmEsms2AD+YSyYzcBjwA7m4B/gYOARAJXgEeAR83mIM3gB+AH4Afgo+AR4BHgEQFnYBETCAA=
+      tv_channel_down:
+        command:
+          - raw:nMxmkwlk0mszmEsms2AD+YSyYzeYAKeAH4GHgYMBz4DPgEfLJrNwCDmIHvgB+AH4AfhH+DZ4NlgNeAR8wlkwgAA=
+      tv_channel_0:
+        command:
+          - raw:nMxm8wlk0mswmEsms2ADacgBlNAB1mM2AdIBCwB/AH8DCAOfAZ8AjwCGAwMAM5mAP4A+guyBB4EHgEeB34DPgEbMIAA=
+      tv_channel_1:
+        command:
+          - raw:nMxm0wlk0mk5mEsmoAZzMAfZjNpuAx4A/gYeBgwHPgM+AR4BDBDsB74A/gQVNAIPAo8GTwOvAZ8Ai5hAAA==
+      tv_channel_2:
+        command:
+          - raw:nMxm0wlk0mswmEsmoBBAB/MZuAx4AfgYeBg4HPgM+AR4BDTEDTwf/AY8APwIPAQ8BnwGfAI2YQA=
+      tv_channel_3:
+        command:
+          - raw:nMxmcwlk0moAhTWbAB/MJZMZvMAFPAD8DDwMGA58BnwCPAIaYgI+CN4J3gB+AH4GHgc+Az4BGzCAAA==
+      tv_channel_4:
+        command:
+          - raw:nMxm0wlk0mswmEsmoBBAB/MZuAx4AfgYeBgk3A58EqwCPAIyYgpeEP4CHgB+AGk5AgKbBCEBT4CHg/eAR8smEAA=
+      tv_channel_5:
+        command:
+          - raw:nMxmcwlk0msymEsms5ADKaABlNgA5mM3mACGgB+AH4GEAc+Ag03Ai8AjpiB74K/gIeAH4AfgUeAh4Q/gEbMIAA==
+      tv_channel_6:
+        command:
+          - raw:nMxmcwlk0msymEsms2AD+YSyYzeYAKeAH4GHgYMBz4DPgEeAQ0xA08CLwGfAD8CDwA/AY8GTwCNmEAA=
+      tv_channel_7:
+        command:
+          - raw:nMxmswlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBJuBz4JVgEeARkxAR8AjwT/AD8APwA/CioEnwCPAIKYQAA==
+      tv_channel_8:
+        command:
+          - raw:nMxmkwlk0mswmEsms5ADKZgD7MZtNwGOAtIAfwB7AwgDmQGfAI8AjJwEP4IngZeBD4XPgEeBl4EPgEbMIAA=
+      tv_channel_9:
+        command:
+          - raw:nMxmkwlk0mk5mEsmoAZzMAfZjNpuAx4A/gYeBgwHPgM+AR4BDBDsB74IvgQ+AP4GPgY+BD4BHgEPMIAA
+      tv_arrow_back:
+        command:
+          - raw:nMxmkwlk0mswmEsms5ADKZgD7MZtNwGPAH8DDwMGA58BnwCPAIacAI+AR4OPgD/LJqGeQC/hD+AR4BHgERMIAA==
+      tv_arrow_forward:
+        command:
+          - raw:nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIGngReAH4Afgc+AH4KXgEeARswgAA==
+      tv_arrow_up:
+        command:
+          - raw:nMxmkwlk0mswmEsms5ADKZgD7MZtNwGPAH8DDwMGA58BnwCPAIacAreAP4A/g2+Ah4BHgEeB74CGzCAA
+      tv_arrow_down:
+        command:
+          - raw:nMxmUwlk0moAhTWcgBlNAAymwAczGbzABDQA/AD8DCAOfAZ8AjwCGmIHvgB+AH4LuTcBjwZPAI8G3wNPmEAA
+      tv_arrow_ok:
+        command:
+          - raw:nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIKXgm+AH4EHgIbNwGfB28DzwEOmEAA=
+      tv_list:
+        command:
+          - raw:nMxmswlk0mswmEsms2AD+YSyYzcBjwA/ADubgYUBz4DPgEeAQ0xAR8EbwTvAQ8APpyAGU0BT8CnwEPAQmYQA
+      tv_q_view:
+        command:
+          - raw:nMxmkwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIGngi+Bn4AezkAMgzyAg8BDwGPBT8AiJhAA
+      tv_settings:
+        command:
+          - raw:nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmICPgjeAH4L3gB+BB4BHgd+AhswgAA==
+      tv_home:
+        command:
+          - raw:nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIKXgQ+AR4BHgaeAz4AfgB+BhswgAA==
+      tv_back:
+        command:
+          - raw:nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIKXgieCr4CHgMeAQ03Aq8DvwM/AIWYQAA==
+      tv_exit:
+        command:
+          - raw:nMxmMwlk0msymEsms2AD+YSyYzeYAKeAH4GHgYMBz4DPgEeAQwRhANeCN4DPgM+AH4EHgB+Ax4CFzCAA
 # IR Remote Гостьова
 # model 
 
@@ -53,26 +121,32 @@
 ### LG volume_up:         nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDA08GfwB/AH8LjwY/AI8AjwCKmEAA=
 ### LG volume_down:       nMxm8wlk0mswmEsms5ADKaAD7MZtOAGPAH8DDwMGmM2BXIBnQEGAI8AjAMDAa8GjwB/AH8AfwmPBa8AjwCKmEAA=
 ### LG volume_mute:       nMxnEwlk0mswmEsms5ADKaAD7MZtNwGPAH8DDwMGmM2BXIBnwCPAI+YzYDAwd/BF8BjwB/Aw8DnwGfCqgAigGmmEAA==
-### LG channel_up:        
-### LG channel_down:      
-### LG channel_0:         
-### LG channel_1:         
-### LG channel_2:         
-### LG channel_3:         
-### LG channel_4:         
-### LG channel_5:         
-### LG channel_6:         
-### LG channel_7:         
-### LG channel_8:         
-### LG channel_9:         
-### LG arrow_back:        
-### LG arrow_forward:     
-### LG arrow_up:          
-### LG ok:
-### LG list:
-### LG info:
-### LG status:
-### LG source:
+### LG channel_up:        nMxnEwlk0mswmEsms2AD+YSyYzcBjwA7m4B/gYOARAJXgEeAR83mIM3gB+AH4Afgo+AR4BHgEQFnYBETCAA=
+### LG channel_down:      nMxmkwlk0mszmEsms2AD+YSyYzeYAKeAH4GHgYMBz4DPgEfLJrNwCDmIHvgB+AH4AfhH+DZ4NlgNeAR8wlkwgAA=
+### LG channel_0:         nMxm8wlk0mswmEsms2ADacgBlNAB1mM2AdIBCwB/AH8DCAOfAZ8AjwCGAwMAM5mAP4A+guyBB4EHgEeB34DPgEbMIAA=
+### LG channel_1:         nMxm0wlk0mk5mEsmoAZzMAfZjNpuAx4A/gYeBgwHPgM+AR4BDBDsB74A/gQVNAIPAo8GTwOvAZ8Ai5hAAA==
+### LG channel_2:         nMxm0wlk0mswmEsmoBBAB/MZuAx4AfgYeBg4HPgM+AR4BDTEDTwf/AY8APwIPAQ8BnwGfAI2YQA=
+### LG channel_3:         nMxmcwlk0moAhTWbAB/MJZMZvMAFPAD8DDwMGA58BnwCPAIaYgI+CN4J3gB+AH4GHgc+Az4BGzCAAA==
+### LG channel_4:         nMxm0wlk0mswmEsmoBBAB/MZuAx4AfgYeBgk3A58EqwCPAIyYgpeEP4CHgB+AGk5AgKbBCEBT4CHg/eAR8smEAA=
+### LG channel_5:         nMxmcwlk0msymEsms5ADKaABlNgA5mM3mACGgB+AH4GEAc+Ag03Ai8AjpiB74K/gIeAH4AfgUeAh4Q/gEbMIAA==
+### LG channel_6:         nMxmcwlk0msymEsms2AD+YSyYzeYAKeAH4GHgYMBz4DPgEeAQ0xA08CLwGfAD8CDwA/AY8GTwCNmEAA=
+### LG channel_7:         nMxmswlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBJuBz4JVgEeARkxAR8AjwT/AD8APwA/CioEnwCPAIKYQAA==
+### LG channel_8:         nMxmkwlk0mswmEsms5ADKZgD7MZtNwGOAtIAfwB7AwgDmQGfAI8AjJwEP4IngZeBD4XPgEeBl4EPgEbMIAA=
+### LG channel_9:         nMxmkwlk0mk5mEsmoAZzMAfZjNpuAx4A/gYeBgwHPgM+AR4BDBDsB74IvgQ+AP4GPgY+BD4BHgEPMIAA
+### LG arrow_back:        nMxmkwlk0mswmEsms5ADKZgD7MZtNwGPAH8DDwMGA58BnwCPAIacAI+AR4OPgD/LJqGeQC/hD+AR4BHgERMIAA==
+### LG arrow_forward:     nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIGngReAH4Afgc+AH4KXgEeARswgAA==
+### LG arrow_up:          nMxmkwlk0mswmEsms5ADKZgD7MZtNwGPAH8DDwMGA58BnwCPAIacAreAP4A/g2+Ah4BHgEeB74CGzCAA
+### LG arrow_down:        nMxmUwlk0moAhTWcgBlNAAymwAczGbzABDQA/AD8DCAOfAZ8AjwCGmIHvgB+AH4LuTcBjwZPAI8G3wNPmEAA
+### LG ok:                nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIKXgm+AH4EHgIbNwGfB28DzwEOmEAA=
+### LG list:              nMxmswlk0mswmEsms2AD+YSyYzcBjwA/ADubgYUBz4DPgEeAQ0xAR8EbwTvAQ8APpyAGU0BT8CnwEPAQmYQA
+### LG guide:             nMxmkwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIBBTcBrwETBG8BDwEPCb8BjwEPAQ8ANZhAA
+### LG q_view:            nMxmkwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIGngi+Bn4AezkAMgzyAg8BDwGPBT8AiJhAA
+### LG inpiut:            nMxmswlk0mk5mEsmoAZzMAfZjNpuAx4A/gYeBgwHMzQBnwCPAIsIdgGvBG8BCggfAH8JnwSfAI8AjJhAAA==
+### LG ratio:             nMxmcwlk0mswmEsms5ADIAwgB7mM2m4DHgD0A2c2APaaAYcBz4DPgEeAQwGBge+DfYEPgEOA1YVfgz+BD4A/gUVMIAA=
+### LG settings:          nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmICPgjeAH4L3gB+BB4BHgd+AhswgAA==
+### LG home:              nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIKXgQ+AR4BHgaeAz4AfgB+BhswgAA==
+### LG back:              nMxmcwlk0mswmEsms2AD+YSyYzcBjwA/Aw8DBwOfAZ8AjwCGmIKXgieCr4CHgMeAQ03Aq8DvwM/AIWYQAA==
+### LG exit:              nMxmMwlk0msymEsms2AD+YSyYzeYAKeAH4GHgYMBz4DPgEeAQwRhANeCN4DPgM+AH4EHgB+Ax4CFzCAA
 
 
 #############################
