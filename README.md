@@ -11,7 +11,7 @@ The The docker is running on Raspberry PI 4B 8 Gb.
 - Mikrotic Router RB4011iGS+ 
 - Mikrotic Access Point cAP ac RBcAPGi-5acD2nD.
 - ESP32 (+ DH11)
-- Xoaomi IR Remote (chuangmi . remote . h102c01, CMYCq01C)
+- Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C)
 - LG TV 42LM340T TV Remote Control
 
 
