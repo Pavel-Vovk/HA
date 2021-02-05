@@ -1,6 +1,6 @@
 # Home Assistant Configuration
 
-The configuration of the private Home Assistant configuration. 
+The configuration of the private Home Assistant server. 
 
 The HA server have been running in docker containers.
 
