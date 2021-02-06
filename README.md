@@ -6,6 +6,17 @@ The HA server have been running in docker containers.
 
 The docker have been running on Raspberry PI 4B 8 Gb.
 
+The configurations are stored in the separated files
+## Folders:
+- views - for View in UI Lovelace
+- smart_devices/ir_remote - the IR Remote config
+- sensors - the configurations for the diff sensors
+- scprits
+- packeges
+- media_players
+- inputs
+- automation
+- customize
 
 ## Devices:
 - Raspberry PI 4B 8 Gb
