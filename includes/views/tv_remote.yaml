@@ -268,7 +268,7 @@ cards:
           service: remote.send_command
           service_data:
             entity_id: remote.ir_remote_livingroom
-            command: tv_menu_up
+            command: tv_arrow_up
       - type: 'custom:button-card'
         color_type: card
         icon: mdi:home
@@ -311,7 +311,7 @@ cards:
           service: remote.send_command
           service_data:
             entity_id: remote.ir_remote_livingroom
-            command: tv_menu_left
+            command: tv_arrow_back
       - type: 'custom:button-card'
         color_type: card
         name: OK
@@ -326,7 +326,7 @@ cards:
           service: remote.send_command
           service_data:
             entity_id: remote.ir_remote_livingroom
-            command: tv_menu_ok
+            command: tv_ok
       - type: 'custom:button-card'
         color_type: card
         icon: mdi:menu-right
@@ -339,7 +339,7 @@ cards:
           service: remote.send_command
           service_data:
             entity_id: remote.ir_remote_livingroom
-            command: tv_menu_right
+            command: tv_arrow_forward
       - type: 'custom:button-card'
         color_type: blank-card
     - type: horizontal-stack
@@ -382,7 +382,7 @@ cards:
           service: remote.send_command
           service_data:
             entity_id: remote.ir_remote_livingroom
-            command: tv_menu_down
+            command: tv_arrow_down
       - type: 'custom:button-card'
         color_type: card
         icon: mdi:exit-run
