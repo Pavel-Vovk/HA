@@ -155,7 +155,7 @@
 ### Samsung ON:        mkym0wlk0msxmEsmoBBTGbTkAgpqAR4BBgPGAOgB5zMAegF3AHaYzcEswGCBC8DrwAym4LXAHuA+wHEgUeCR4HHhaeEX4BHgEeAQswgA
 ### Samsung OFF:       mkym0wlk0msxmEsmoBBTGbTkAgpqAR4BBgPGAOgB5zMAegF3AHaYzcEswGCBC8DrwAym4LXAHuA+wHEgUeCR4HHhaeEX4BHgEeAQswgA
 
-# pvovk@raspberrypi:~ $ miiocli chuangmiir --ip 192.168.88.51 --token 32a9765e9d02c400e2754dc96691b76c play nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
+# pvovk@raspberrypi:~ $ miiocli chuangmiir --ip 192.168.**.** --token **** play nMymEwlk0mk4mEsms5ADKaAD7MZtNwGPAH8DDwMGA58BnwCPAIYDAwVvBE8BjwB/BS4NpgCIAikBmAK/ARiYQAA=
 # Playing the supplied command
 # ['ok']
 # https://github.com/madmicio/LG-WebOS-Remote-Control
