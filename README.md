@@ -6,6 +6,7 @@ The HA server have been running in docker containers.
 
 The docker have been running on Raspberry PI 4B 8 Gb.
 
+
 ## Devices:
 - Raspberry PI 4B 8 Gb
 - Mikrotic Router RB4011iGS+ 
