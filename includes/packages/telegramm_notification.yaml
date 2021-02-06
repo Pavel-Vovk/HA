@@ -24,7 +24,7 @@ telegramm:
              message: | 
                  {{"\U0001F4AC"}} Стан системи
                  {{"\U0001F552"}} Звіт за {{"\U0001F4C5"}}: {{ states('sensor.date_time_formatted') }}
-                 {{"\U0001F552"}} Останнє перезавантаження Raspberry Pi 4B 8MB 1 {{ (states('sensor.last_boot_custom') | replace (' ', '') | replace ('\n', '') | replace ('.', '. ')) }} тому
+                 {{"\U0001F552"}} Останнє перезавантаження Raspberry Pi 4B 8MB 1: {{ (states('sensor.last_boot_custom') | replace (' ', '') | replace ('\n', '') | replace ('.', '. ')) }} тому
                  {{"\U0001F552"}} Останнє перезавантаження Home Assistant {{ (states('sensor.online_custom') | replace (' ', '') | replace ('\n', '') | replace ('.', '. ')) }} тому
                  {{"\U0001F504"}} Завантаження CPU {{ states('sensor.processor_use') }} %
                  {{"\U0001F504"}} Завантаження RAM  {{ states('sensor.memory_use_percent') }} %

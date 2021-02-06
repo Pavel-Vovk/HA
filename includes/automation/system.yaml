@@ -3,7 +3,7 @@
   initial_state: true
   trigger:
     - platform: template
-      value_template: '{{now().weekday() == 1 }}'
+      value_template: '{{now().weekday() == 0 }}'
 
     # - platform: template
     #   value_template: '{{now().day % 10 == 1 }}'
@@ -24,3 +24,5 @@
       data:
           keep_days: 90
           repack: true
+
+#Today is {% if now().weekday() in (0,) %}Monday{% elif now().weekday() in (1,) %}Tuesday{% elif now().weekday() in (2,) %}Wednesday{% elif now().weekday() in (3,) %}Thursday{% elif now().weekday() in (4,) %}Friday{% elif now().weekday() in (5,) %}Saturday{% elif now().weekday() in (6,)%}Sunday{% endif %}.
