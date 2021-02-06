@@ -19,3 +19,16 @@ The configurations are stored in the separated files and folders in order to man
 - Xiaomi Mijia Digital Clock 3.7" E-INK Screen Temperature Humidity Sensor Meter (LYWSD02) 2ps
 - TBD
 
+## Screenshots
+1
+![1](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
+2
+![2](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant2.png)
+3
+![3](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
+4
+![4](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
+5
+![5](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
+6
+![6](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
