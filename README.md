@@ -20,26 +20,26 @@ The configurations are stored in the separated files and folders in order to man
 - TBD
 
 ## Screenshots
-1. views/network.yaml
+1. includes/views/network.yaml
 
 ![Мережа](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
 
-2. views/network_traffic.yaml
+2. includes/views/network_traffic.yaml
 
 ![Мережа-Трафік](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant2.png)
 
-3. views/homeassistant.yaml
+3. includes/views/homeassistant.yaml
 
 ![Данні Сервера HA](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
 
-4. views/esp32_room2.yaml
+4. includes/views/esp32_room2.yaml
 
 ![Кабінет](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
 
-5. views/esp32_brd_room.yaml
+5. includes/views/esp32_brd_room.yaml
 
 ![Спальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
 
-6. views/tv_remote.yaml
+6. includes/views/tv_remote.yaml
 
 ![Пульт](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
