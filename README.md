@@ -21,14 +21,23 @@ The configurations are stored in the separated files and folders in order to man
 
 ## Screenshots
 1
+
 ![Мережа](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
+
 2
+
 ![Мережа-Трафік](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant2.png)
+
 3
+
 ![Данні Сервера HA](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
+
 4
+
 ![Кабінет](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
+
 5
+
 ![Спальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
 
 6
