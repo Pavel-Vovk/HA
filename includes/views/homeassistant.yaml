@@ -57,7 +57,7 @@ cards:
             name: Температура Raspberry Pi 4B 8Gb 
         name: Температура Raspberry Pi 4B 8Gb 
         line_color: blue
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -531,7 +531,7 @@ cards:
           - entity: sensor.memory_use_percent
             name: Пам'ять
             color: green            
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -724,7 +724,7 @@ cards:
         entities:
           - entity: sensor.disk_use_percent
             name: Динаміка заповненя диску
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -756,7 +756,7 @@ cards:
           - entity: sensor.maria_db_size
             name: Size
             color: "#87CEFA"          
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true

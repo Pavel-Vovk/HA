@@ -33,7 +33,7 @@ cards:
             name: Температура
         name: Температура
         line_color: blue
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -92,7 +92,7 @@ cards:
           - entity: sensor.mikrotikrouter_memory_usage
             name: Пам'ять
             color: green            
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -178,7 +178,7 @@ cards:
           - entity: sensor.mikrotikaccesspoint1_memory_usage
             name: Пам'ять
             color: green            
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true

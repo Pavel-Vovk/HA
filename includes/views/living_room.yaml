@@ -51,7 +51,7 @@ cards:
           - entity: sensor.lywsd02_living_room_temperature
             name: Температура
         name: Температура
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: avg
         hour24: true
@@ -85,7 +85,7 @@ cards:
           - entity: sensor.lywsd02_living_room_humidity
             name: Вологість
         name: Вологість
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: avg
         hour24: true

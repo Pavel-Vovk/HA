@@ -55,7 +55,7 @@ cards:
           # - entity: sensor.network_lan_internal_upload_kbit
           #   name: Передано
           #   color: blue            
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -83,7 +83,7 @@ cards:
           - entity: sensor.network_lan_internal_total_kbit
             name: Внутрішній
             color: cyan            
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -126,7 +126,7 @@ cards:
           - entity: sensor.network_ap1_txt_mbit
             name: Передано
             color: blue            
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: max
         hour24: true
@@ -157,7 +157,7 @@ cards:
         entities:
           - entity: sensor.network_lan_internet
             color: purple           
-        hours_to_show: 120
+        hours_to_show: !secret global_hours_to_show
         points_per_hour: 0.2
         aggregate_func: avg
         hour24: true
