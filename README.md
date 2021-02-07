@@ -30,5 +30,6 @@ The configurations are stored in the separated files and folders in order to man
 ![Кабінет](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
 5
 ![Спальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
+
 6
 ![Пульт](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
