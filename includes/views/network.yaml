@@ -34,7 +34,7 @@ cards:
         name: Температура
         line_color: blue
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true
@@ -93,7 +93,7 @@ cards:
             name: Пам'ять
             color: green            
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true
@@ -179,7 +179,7 @@ cards:
             name: Пам'ять
             color: green            
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true

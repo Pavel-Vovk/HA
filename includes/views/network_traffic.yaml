@@ -26,7 +26,7 @@ cards:
             name: Передано
             color: blue            
         hours_to_show: 120
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true
@@ -56,7 +56,7 @@ cards:
           #   name: Передано
           #   color: blue            
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true
@@ -84,7 +84,7 @@ cards:
             name: Внутрішній
             color: cyan            
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true
@@ -127,7 +127,7 @@ cards:
             name: Передано
             color: blue            
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: max
         hour24: true
         show_line: true
@@ -158,7 +158,7 @@ cards:
           - entity: sensor.network_lan_internet
             color: purple           
         hours_to_show: !secret global_hours_to_show
-        points_per_hour: 0.2
+        points_per_hour: !secret global_points_per_hour
         aggregate_func: avg
         hour24: true
         show_line: true
