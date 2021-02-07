@@ -1,8 +1,8 @@
 homeassistant:
   name: !secret home_name
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  elevation: !secret home_elevation
+  latitude: !secret home_latitude_old
+  longitude: !secret home_longitude_old
+  elevation: !secret home_elevation_old
   unit_system: metric
   time_zone: !secret home_time_zone
   packages: !include_dir_merge_named includes/packages
