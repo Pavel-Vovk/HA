@@ -67,7 +67,7 @@ cards:
           icon: mdi:volume-off
           styles:
             card:
-              - background-color: '#FFD700'
+              - background-color: '#FF8C00'
           tap_action:
             action: call-service
             service: remote.send_command
@@ -198,7 +198,7 @@ cards:
           icon: mdi:format-list-numbered
           styles:
             card:
-              - background-color: '#D8BFD8'
+              - background-color: '#DDA0DD'
           tap_action:
             action: call-service
             service: remote.send_command
@@ -219,7 +219,7 @@ cards:
           icon: mdi:backburger
           styles:
             card:
-              - background-color: '#D8BFD8'
+              - background-color: '#DDA0DD'
           tap_action:
             action: call-service
             service: remote.send_command
