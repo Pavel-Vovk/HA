@@ -3,22 +3,9 @@
   initial_state: true
   trigger:
     - platform: template
-      value_template: '{{now().weekday() == 0 }}'
-
-    # - platform: template
-    #   value_template: '{{now().day % 10 == 1 }}'
-
+      value_template: '{{(now().weekday() == 0) and (now().hour == 15)}}'
     # - platform: time
     #   at: '01:00:00'
-
-    # - platform: time_date
-    #   at: "3:00:00"
-    #   weekday: 
-    #     - sun
-
-    # - platform: time_pattern
-    # # You can also match on interval. This will match every 5 minutes
-    #   minutes: "/1440" # 10 days
   action:
     - service: recorder.purge
       data:
