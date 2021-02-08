@@ -1,5 +1,5 @@
 - id: Стиснення Бази
-  alias: 00_purge_everyday
+  alias: purge_db
   initial_state: true
   trigger:
     - platform: template
