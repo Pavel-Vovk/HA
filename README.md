@@ -19,7 +19,7 @@ The configurations are stored in the separated files and folders in order to man
 - Xiaomi Mijia Digital Clock 3.7" E-INK Screen Temperature Humidity Sensor Meter (LYWSD02) 2ps
 - TBD
 
-## Additioanl
+## Additional
 - Telegramm notifications
 
 ## Screenshots
