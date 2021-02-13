@@ -17,7 +17,7 @@ default_config:
 
 frontend:
   themes: !include_dir_merge_named themes
-  javascript_version: auto
+#  javascript_version: auto # deprecated
 
 #
 lovelace:
@@ -52,12 +52,13 @@ sensor: !include_dir_merge_list includes/sensor
 automation: !include_dir_merge_list includes/automation
 script: !include_dir_merge_named includes/scripts
 
-xiaomi_aqara:
-  discovery_retry: 10
-  gateways:
-    - mac: !secret xiaomi_aqara_gateway2_corridor_mac
-      key: !secret xiaomi_aqara_gateway2_corridor_key
-      host: !secret xiaomi_aqara_gateway2_corridor_host
+# Temporary unavailable
+# xiaomi_aqara:
+#   discovery_retry: 10
+#   gateways:
+#     - mac: !secret xiaomi_aqara_gateway2_corridor_mac
+#       key: !secret xiaomi_aqara_gateway2_corridor_key
+#       host: !secret xiaomi_aqara_gateway2_corridor_host
 
 mikrotik:
   - name: Mikrotik
