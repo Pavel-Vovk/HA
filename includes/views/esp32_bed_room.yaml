@@ -10,7 +10,59 @@ cards:
       icon: mdi:clock-digital
       content: >
          <ha-icon icon="mdi:clock-digital"></ha-icon>
-         **Годинник спальня**
+         **ESP32**
+    - type: entities
+      show_header_toggle: false
+      entities:
+        - entity: sensor.bad_room_esp32_firmware_version
+          name: Версія прошивки
+        - entity: sensor.bad_room_esp32_uptime
+          name: В мережі
+        - entity: device_tracker.esp32_bad_room
+          name: Місцезнахождення
+        - entity: sensor.bad_room_esp32_wifi
+          name: Сигнал Wi-Fi 
+    - type: horizontal-stack
+      cards: 
+####### NEW CARD ##############            
+      - type: custom:mini-graph-card
+        entities:
+          - entity: sensor.bad_room_esp32_wifi
+            name: Сигнал Wi-Fi
+        name:  Сигнал Wi-Fi
+        line_color: green
+        hours_to_show: !secret global_hours_to_show
+        points_per_hour: !secret global_points_per_hour
+        aggregate_func: avg
+        hour24: true
+        show_line: true
+        show_points: false
+        show_legend: true
+        show:
+          average: true
+          extrema: true
+          name_adaptive_color: true
+          labels: true
+          legend: true
+        # color_thresholds_transition: hard
+        color_thresholds:
+          - value: -35
+            color: "#228B22"
+          - value: -50
+            color: "#9ACD32"
+          - value: -80
+            color: "#FFA500"
+          - value: -100
+            color: "#FF0000"
+########################################################
+    - type: horizontal-stack
+      cards:
+      - type: markdown
+        icon: mdi:clock-digital
+        content: >
+           <ha-icon icon="mdi:clock-digital"></ha-icon>
+           **Годинник спальня**
+
     - type: entities
       show_header_toggle: false
       entities:
@@ -18,6 +70,9 @@ cards:
           name: Температура
         - entity: sensor.lywsd02_bed_room_humidity
           name: Вологість
+        - entity: sensor.lywsd02_bad_room_battery_level
+          name: Батарея
+
     - type: horizontal-stack
       cards:
         - type: markdown
@@ -33,7 +88,13 @@ cards:
           content: >
             <ha-icon icon="mdi:devices"></ha-icon>
             **Пристрої**
-
+    - type: horizontal-stack
+      cards:
+        - type: markdown
+          icon: mdi:devices
+          content: >
+            <ha-icon icon="mdi:remote"></ha-icon>
+            **ІЧ Керування**
     - type: horizontal-stack
       cards:
         - type: entities
@@ -41,8 +102,7 @@ cards:
           entities:
             - entity: remote.ir_remote_badroom
             - entity: device_tracker.chuangmi_remote_h102c01_mibtbf20_2
-              name: Додатково
-              
+              name: Додатково               
     # - type: horizontal-stack
     #   cards:
     #     - type: entity-button
@@ -66,7 +126,7 @@ cards:
       icon: mdi:leak
       content: >
          <ha-icon icon="mdi:leak"></ha-icon>
-         **Графікі**
+         **Годинник**
     - type: horizontal-stack
       cards:           
 ####### NEW CARD ##############            
