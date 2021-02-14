@@ -15,13 +15,13 @@ cards:
     - type: entities
       show_header_toggle: false
       entities:
-        - entity: sensor.esp32_test1_location_esp32_firmware_version
+        - entity: sensor.cabinet_esp32_firmware_version
           name: Версія прошивки
-        - entity: sensor.room2_esp32_online
+        - entity: sensor.cabinet_esp32_uptime
           name: В мережі
         - entity: device_tracker.espressif_2
           name: Місцезнахождення
-        - entity: sensor.esp32_test1_location_esp32_wi_fi
+        - entity: sensor.cabinet_esp32_wifi
           name: Сигнал Wi-Fi
      
     - type: horizontal-stack
@@ -29,7 +29,7 @@ cards:
 ####### NEW CARD ##############            
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.esp32_test1_location_esp32_wi_fi
+          - entity: sensor.cabinet_esp32_wifi
             name: Сигнал Wi-Fi
         name:  Сигнал Wi-Fi
         line_color: green
@@ -68,16 +68,16 @@ cards:
     - type: entities
       show_header_toggle: false
       entities:
-        - entity: sensor.esp32_test1_location_dh11_temperature
+        - entity: sensor.cabinet_dh11_temperature
           name: Температура
-        - entity: sensor.esp32_test1_location_dh11_humidity
+        - entity: sensor.cabinet_dh11_humidity
           name: Вологість
     - type: horizontal-stack
       cards:  
 ####### NEW CARD ##############            
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.esp32_test1_location_dh11_temperature
+          - entity: sensor.cabinet_dh11_temperature
             name: Температура
         name: Температура
         hours_to_show: !secret global_hours_to_show
@@ -111,7 +111,7 @@ cards:
 ####### NEW CARD ##############            
       - type: custom:mini-graph-card
         entities:
-          - entity: sensor.esp32_test1_location_dh11_humidity
+          - entity: sensor.cabinet_dh11_humidity
             name: Вологість
         name: Вологість
         hours_to_show: !secret global_hours_to_show

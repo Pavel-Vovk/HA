@@ -1,9 +1,9 @@
 # Змінні
 substitutions:
- location: living_room
+  location: bad_room
  
 esphome:
-  name: esp32_living_room
+  name: esp32_bad_room
   platform: ESP32
   board: m5stack-core-esp32
 
@@ -31,28 +31,28 @@ sensor:
 
 # Рівень сигнала шлюзу
   - platform: wifi_signal
-    name:  ${location}_esp32_wi-fi
+    name:  ${location}_esp32_wifi
     update_interval: 60s
 
 #Сенсори годинника Вітальня    
-  - platform: xiaomi_lywsd02
-    mac_address: !secret living_room_time_mac
-    temperature:
-      name: "LYWSD02_living_room_Temperature"
-    humidity:
-      name: "LYWSD02_living_room_Humidity"
-    battery_level:
-      name: "LYWSD02_living_room_battery_level"
+#  - platform: xiaomi_lywsd02
+#    mac_address: !secret living_room_time_mac
+#    temperature:
+#      name: "LYWSD02_living_room_Temperature"
+#    humidity:
+#      name: "LYWSD02_living_room_Humidity"
+#    battery_level:
+#      name: "LYWSD02_living_room_battery_level"
 
 #Сенсори годинника Спальня    
-#  - platform: xiaomi_lywsd02
-#    mac_address: !secret bed_room_time_mac
-#    temperature:
-#      name: "LYWSD02_bed_room_Humidity_bed_room_Temperature"
-#    humidity:
-#      name: "LYWSD02_bed_room_Humidity"
-    # battery_level:
-    #   name: "LYWSD02_bad_room_battery_level"
+  - platform: xiaomi_lywsd02
+    mac_address: !secret bed_room_time_mac
+    temperature:
+      name: "LYWSD02_bed_room_Temperature"
+    humidity:
+      name: "LYWSD02_bed_room_Humidity"
+    battery_level:
+      name: "LYWSD02_bad_room_battery_level"
 
 # Версія прошивки
 text_sensor:

@@ -36,7 +36,7 @@ views:
 ##Дані Вітальня
   - !include /config/includes/views/living_room.yaml
 ##Дані Коридор
-  - !include /config/includes/views/corridor.yaml
+#  - !include /config/includes/views/corridor.yaml
 ##Телеграм
   - !include /config/includes/views/telegramm.yaml
 ##TB
