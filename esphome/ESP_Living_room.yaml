@@ -1,12 +1,11 @@
 # Змінні
 substitutions:
- location: cabinet
- plant: monstera
-
+ location: living_room
+ 
 esphome:
-  name: esp32_test1
+  name: esp32_living_room
   platform: ESP32
-  board: nodemcu-32s
+  board: m5stack-core-esp32
 
 wifi:
   ssid: !secret wifi_common_ssid
@@ -14,28 +13,17 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: !secret wifi_esp32_pass
+    ssid: !secret wifi_esp32_ssid
     password: !secret wifi_esp32_pass
 
 web_server:
   port: 80
+  
 
 # Інтервал сканування BLE
 esp32_ble_tracker:
-    
 
 sensor:
-  - platform: dht
-    pin: GPIO23
-    model: DHT11
-    temperature:
-      #id:
-      name: "${location}_DH11_temperature"
-    humidity:
-      #id:
-      name: "${location}_DH11_humidity"
-    update_interval: 60s
-
 # Час в онлайні
   - platform: uptime
     name: ${location}_uptime
@@ -47,24 +35,24 @@ sensor:
     update_interval: 60s
 
 #Сенсори годинника Вітальня    
-#  - platform: xiaomi_lywsd02
-#    mac_address: !secret living_room_time_mac
-#    temperature:
-#      name: "LYWSD02_living_room_Temperature"
-#    humidity:
-#      name: "LYWSD02_living_room_Humidity"
-    # battery_level:
-    #   name: "LYWSD02_living_room_battery_level"
+  - platform: xiaomi_lywsd02
+    mac_address: !secret living_room_time_mac
+    temperature:
+      name: "LYWSD02_living_room_Temperature"
+    humidity:
+      name: "LYWSD02_living_room_Humidity"
+    battery_level:
+      name: "LYWSD02_living_room_battery_level"
 
 #Сенсори годинника Спальня    
-  - platform: xiaomi_lywsd02
-    mac_address: !secret bed_room_time_mac
-    temperature:
-      name: "LYWSD02_bed_room_Humidity_bed_room_Temperature"
-    humidity:
-      name: "LYWSD02_bed_room_Humidity"
-    battery_level:
-      name: "LYWSD02_bad_room_battery_level"
+#  - platform: xiaomi_lywsd02
+#    mac_address: !secret bed_room_time_mac
+#    temperature:
+#      name: "LYWSD02_bed_room_Humidity_bed_room_Temperature"
+#    humidity:
+#      name: "LYWSD02_bed_room_Humidity"
+    # battery_level:
+    #   name: "LYWSD02_bad_room_battery_level"
 
 # Версія прошивки
 text_sensor:
