@@ -26,12 +26,12 @@ esp32_ble_tracker:
 sensor:
 # Час в онлайні
   - platform: uptime
-    name: ${location}_uptime
+    name: ${location}_esp32_uptime
     update_interval: 60s     
 
 # Рівень сигнала шлюзу
   - platform: wifi_signal
-    name:  ${location}_wi-fi
+    name:  ${location}_esp32_wi-fi
     update_interval: 60s
 
 #Сенсори годинника Вітальня    
@@ -57,13 +57,13 @@ sensor:
 # Версія прошивки
 text_sensor:
   - platform: version
-    name: ${location}_firmware_version
+    name: ${location}_esp32_firmware_version
     icon: "mdi:information"
     
 # кнопка перезапуска    
 switch:
   - platform: restart
-    name: ${location}_Restart
+    name: ${location}_esp32_Restart
 
 captive_portal:
 
