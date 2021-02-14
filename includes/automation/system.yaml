@@ -1,9 +1,7 @@
 - id: Стиснення Бази
-  alias: purge_db
+  alias: 00_purge_everyday
   initial_state: true
   trigger:
-    # - platform: template
-    #   value_template: '{{(now().weekday() == 0) and (now().hour == 15)}}'
     - platform: time
       at: '01:00:00'
   action:
