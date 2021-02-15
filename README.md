@@ -4,20 +4,20 @@ The configuration of the private Home Assistant server.
 
 The HA server have been running in docker containers.
 
-The docker have been running on Raspberry PI 4B 8 Gb.
+The docker have been running on Raspberry PI 4B 8 GB.
 
-The configurations are stored in the separated files and folders in order to manage the difffrent entities in separated files
+The configurations are stored in the separated files and folders in order to manage the different entities in separated files
 
 ## Devices:
-- Raspberry PI 4B 8 Gb
-- Mikrotic Router RB4011iGS+ 
-- Mikrotic Access Point cAP ac RBcAPGi-5acD2nD.
+- Raspberry PI 4B 8 GB
+- MikroTik Router RB4011iGS+ 
+- MikroTik Access Point cAP ac RBcAPGi-5acD2nD.
 - ESP32 nodemcu-32s (+ DH11 sensor)
-- ESP32 m5stack-core-esp32 2ps
-- Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C) 2ps
+- ESP32 m5stack-core-esp32 2 pсs
+- Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C) 2 p pсs
 - LG TV 42LM340T TV Remote Control
 - Samsung TV
-- Xiaomi Mijia Digital Clock 3.7" E-INK Screen Temperature Humidity Sensor Meter (LYWSD02) 2ps
+- Xiaomi Mijia Digital Clock 3.7" E-INK Screen Temperature Humidity Sensor Meter (LYWSD02) 2 pcs
 - TBD
 
 ## Additional
