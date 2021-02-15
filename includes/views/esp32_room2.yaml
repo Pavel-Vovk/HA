@@ -17,7 +17,7 @@ cards:
       entities:
         - entity: sensor.cabinet_esp32_firmware_version
           name: Версія прошивки
-        - entity: sensor.cabinet_esp32_uptime
+        - entity: sensor.cabinet_esp32_online
           name: В мережі
         - entity: device_tracker.espressif_2
           name: Місцезнахождення

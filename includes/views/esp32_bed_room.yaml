@@ -16,7 +16,7 @@ cards:
       entities:
         - entity: sensor.bad_room_esp32_firmware_version
           name: Версія прошивки
-        - entity: sensor.bad_room_esp32_uptime
+        - entity: sensor.bad_room_esp32_online
           name: В мережі
         - entity: device_tracker.esp32_bad_room
           name: Місцезнахождення
@@ -101,6 +101,7 @@ cards:
           show_header_toggle: false
           entities:
             - entity: remote.ir_remote_badroom
+              name: IR Спальня
             - entity: device_tracker.chuangmi_remote_h102c01_mibtbf20_2
               name: Додатково               
     # - type: horizontal-stack

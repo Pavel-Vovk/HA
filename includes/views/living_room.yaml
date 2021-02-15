@@ -16,7 +16,7 @@ cards:
       entities:
         - entity: sensor.living_room_esp32_firmware_version
           name: Версія прошивки
-        - entity: sensor.living_room_esp32_uptime
+        - entity: sensor.living_room_esp32_online
           name: В мережі
         - entity: device_tracker.esp32_living_room
           name: Місцезнахождення
