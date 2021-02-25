@@ -28,22 +28,22 @@ The configurations are stored in the separated files and folders in order to man
 
 ![Мережа](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
 
-2. includes/views/network_traffic.yaml
+2. [Мережа-Трафік](includes/views/network_traffic.yaml)
 
 ![Мережа-Трафік](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant2.png)
 
-3. includes/views/homeassistant.yaml
+3. [Данні Сервера HA](includes/views/homeassistant.yaml)
 
 ![Данні Сервера HA](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
 
-4. includes/views/esp32_room2.yaml
+4. [Кабінет](includes/views/esp32_room2.yaml)
 
 ![Кабінет](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
 
-5. includes/views/esp32_bed_room.yaml
+5. [Спальня](includes/views/esp32_bed_room.yaml)
 
 ![Спальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
 
-6. includes/views/tv_remote.yaml
+6. [Пульт ТВ LG](includes/views/tv_remote.yaml)
 
 ![Пульт](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
