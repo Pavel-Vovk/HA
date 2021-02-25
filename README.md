@@ -24,7 +24,7 @@ The configurations are stored in the separated files and folders in order to man
 - Telegramm notifications
 
 ## Screenshots
-1. includes/views/network.yaml
+1. [includes/views/network.yaml] (https://github.com/Pavel-Vovk/HA/blob/master/includes/views/network.yaml)
 
 ![Мережа](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
 
