@@ -1,0 +1,113 @@
+title: Кореляція
+icon: mdi:chart-areaspline
+cards:
+  - type: vertical-stack
+    ######################## Температура
+    cards:
+      - type: markdown
+        #      icon: mdi:home-thermometer
+        content: >
+          <ha-icon icon="mdi:home-thermometer"></ha-icon>
+          **Температура. Всередині**
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Температура. Кореляція
+            icon: mdi:thermometer
+            entities:
+              - entity: sensor.living_room_bmp280_temperature_2
+                name: Вітальня
+                color: magenta
+              - entity: sensor.bad_room_bmp280_temperature
+                name: Спальня
+                color: green
+              - entity: sensor.cabinet_bmp280_temperature
+                name: Гостьова
+                color: blue
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
+  #########################################
+  - type: vertical-stack
+    ######################## Вологість
+    cards:
+      - type: markdown
+        #      icon: mdi:water-percent
+        content: >
+          <ha-icon icon="mdi:water-percent"></ha-icon>
+          **Вологість. Всередині**
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Вологість. Кореляція
+            icon: mdi:water-percent
+            entities:
+              - entity: sensor.living_room_sht30_humidity_2
+                name: Вітальня
+                color: magenta
+              - entity: sensor.bad_room_sht30_humidity
+                name: Спальня
+                color: green
+              - entity: sensor.cabinet_sht30_humidity
+                name: Гостьова
+                color: blue
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
+  #################################################
+  - type: vertical-stack
+    ######################## Тиск
+    cards:
+      - type: markdown
+        #      icon: mdi:gauge
+        content: >
+          <ha-icon icon="mdi:gauge"></ha-icon>
+          **Тиск. Всередині**
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Тиск. Кореляція
+            icon: mdi:gauge
+            entities:
+              - entity: sensor.living_room_bmp280_pressure_2
+                name: Вітальня
+                color: magenta
+              - entity: sensor.bad_room_bmp280_pressure
+                name: Спальня
+                color: green
+              - entity: sensor.cabinet_bmp280_pressure
+                name: Гостьова
+                color: blue
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true

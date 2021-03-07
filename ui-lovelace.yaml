@@ -14,30 +14,32 @@ resources:
   - url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js
     type: module
   - url: /hacsfiles/flex-horseshoe-card/flex-horseshoe-card.js
-    type: module 
+    type: module
   - url: /hacsfiles/flex-horseshoe-card/flex-horseshoe-card.js
     type: module
   - url: /hacsfiles/button-card/button-card.js
-    type: module    
+    type: module
 title: !secret home_title
 views:
-##Погода
+  ##Погода
   - !include /config/includes/views/weather.yaml
-##Мережа
+  ##Мережа
   - !include /config/includes/views/network.yaml
-##Мережа Траффік
+  ##Мережа Траффік
   - !include /config/includes/views/network_traffic.yaml
-##Дані Сервера HA
+  ##Дані Сервера HA
   - !include /config/includes/views/homeassistant.yaml
-##Дані Кімната 2
+  ##Дані Кімната 2
   - !include /config/includes/views/esp32_room2.yaml
-##Дані Спальня
+  ##Дані Спальня
   - !include /config/includes/views/esp32_bed_room.yaml
-##Дані Вітальня
+  ##Дані Вітальня
   - !include /config/includes/views/living_room.yaml
-##Дані Коридор
-#  - !include /config/includes/views/corridor.yaml
-##Телеграм
+  ##Дані Коридор
+  #  - !include /config/includes/views/corridor.yaml
+  ##Кореляція
+  - !include /config/includes/views/sensors_correlation.yaml
+  ##Телеграм
   - !include /config/includes/views/telegramm.yaml
-##TB
+  ##TB
   - !include /config/includes/views/tv_remote.yaml

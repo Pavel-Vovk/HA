@@ -5,136 +5,169 @@ icon: mdi:chair-rolling
 #icon: mdi:google-classroom
 cards:
   - type: vertical-stack
-######################## Роутер
-    cards:      
-    - type: markdown
-      icon: mdi:cpu-32-bit
-      content: >
-         <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
-         **ESP32**
-    - type: entities
-      show_header_toggle: false
-      entities:
-        - entity: sensor.cabinet_esp32_firmware_version
-          name: Версія прошивки
-        - entity: sensor.cabinet_esp32_online
-          name: В мережі
-        - entity: device_tracker.espressif_2
-          name: Місцезнахождення
-        - entity: sensor.cabinet_esp32_wifi
-          name: Сигнал Wi-Fi
-     
-    - type: horizontal-stack
-      cards: 
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
+    ######################## Роутер
+    cards:
+      - type: markdown
+        #        icon: mdi:cpu-32-bit
+        content: >
+          <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
+          **ESP32**
+      - type: entities
+        show_header_toggle: false
         entities:
+          - entity: sensor.cabinet_esp32_firmware_version
+            name: Версія прошивки
+          - entity: sensor.cabinet_esp32_online
+            name: В мережі
+          - entity: device_tracker.espressif_2
+            name: Місцезнахождення
           - entity: sensor.cabinet_esp32_wifi
             name: Сигнал Wi-Fi
-        name:  Сигнал Wi-Fi
-        line_color: green
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: avg
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          average: true
-          extrema: true
-          name_adaptive_color: true
-          labels: true
-          legend: true
-        # color_thresholds_transition: hard
-        color_thresholds:
-          - value: -35
-            color: "#228B22"
-          - value: -50
-            color: "#9ACD32"
-          - value: -80
-            color: "#FFA500"
-          - value: -100
-            color: "#FF0000"
 
-###############################   
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.cabinet_esp32_wifi
+                name: Сигнал Wi-Fi
+            name: Сигнал Wi-Fi
+            line_color: green
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: avg
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              average: true
+              extrema: true
+              name_adaptive_color: true
+              labels: true
+              legend: true
+            # color_thresholds_transition: hard
+            color_thresholds:
+              - value: -35
+                color: "#228B22"
+              - value: -50
+                color: "#9ACD32"
+              - value: -80
+                color: "#FFA500"
+              - value: -100
+                color: "#FF0000"
+
+  ###############################
   - type: vertical-stack
-    cards: 
-    - type: markdown
-      icon: mdi:leak
-      content: >
-         <ha-icon icon="mdi:leak"></ha-icon>
-         **Сенсори**
-    - type: entities
-      show_header_toggle: false
-      entities:
-        - entity: sensor.cabinet_dh11_temperature
-          name: Температура
-        - entity: sensor.cabinet_dh11_humidity
-          name: Вологість
-    - type: horizontal-stack
-      cards:  
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
+    cards:
+      - type: markdown
+        #        icon: mdi:leak
+        content: >
+          <ha-icon icon="mdi:leak"></ha-icon>
+          **Сенсори**
+      - type: entities
+        show_header_toggle: false
         entities:
-          - entity: sensor.cabinet_dh11_temperature
+          - entity: sensor.cabinet_bmp280_temperature
             name: Температура
-        name: Температура
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: avg
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          average: true
-          extrema: true
-          name_adaptive_color: true
-          labels: true
-          legend: true
-        color_thresholds:
-          - value: 10
-            color: "#4682B4"
-          - value: 30
-            color: "#228B22"
-          - value: 40
-            color: "#FFA500"
-          - value: 50
-            color: "#FF0000"
-
-###############################    
-
-
-    - type: horizontal-stack
-      cards:  
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        entities:
-          - entity: sensor.cabinet_dh11_humidity
+          - entity: sensor.cabinet_sht30_humidity
             name: Вологість
-        name: Вологість
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: avg
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          average: true
-          extrema: true
-          name_adaptive_color: true
-          labels: true
-          legend: true
-        color_thresholds:
-          - value: 30
-            color: "#4682B4"
-          - value: 50
-            color: "#228B22"
-          - value: 80
-            color: "#FFA500"
-          - value: 90
-            color: "#FF0000"
+          - entity: sensor.cabinet_bmp280_pressure
+            name: Тиск
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.cabinet_bmp280_temperature
+                name: Температура
+            name: Температура
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: avg
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              average: true
+              extrema: true
+              name_adaptive_color: true
+              labels: true
+              legend: true
+            color_thresholds:
+              - value: 10
+                color: "#4682B4"
+              - value: 30
+                color: "#228B22"
+              - value: 40
+                color: "#FFA500"
+              - value: 50
+                color: "#FF0000"
 
-############################### 
+      ###############################
+
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.cabinet_sht30_humidity
+                name: Вологість
+            name: Вологість
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: avg
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              average: true
+              extrema: true
+              name_adaptive_color: true
+              labels: true
+              legend: true
+            color_thresholds:
+              - value: 30
+                color: "#4682B4"
+              - value: 50
+                color: "#228B22"
+              - value: 80
+                color: "#FFA500"
+              - value: 90
+                color: "#FF0000"
+      ###############################
+      ###############################
+
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.cabinet_bmp280_pressure
+                name: Тиск
+            name: Тиск
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: avg
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              average: true
+              extrema: true
+              name_adaptive_color: true
+              labels: true
+              legend: true
+            color_thresholds:
+              - value: 1000
+                color: "#4682B4"
+              - value: 1013.3
+                color: "#228B22"
+              - value: 1030
+                color: "#FFA500"
+              - value: 1045
+                color: "#FF0000"
+###############################

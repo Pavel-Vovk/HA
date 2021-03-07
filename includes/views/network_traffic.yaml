@@ -2,171 +2,171 @@ title: Мережа
 icon: mdi:lan
 cards:
   - type: vertical-stack
-######################## Роутер
-    cards:      
-    - type: markdown
-      icon: mdi:lan-connect
-      content: >
-         <ha-icon icon="mdi:router-network"></ha-icon>
-         **Router. MikroTik RB4011iGS+**
-    - type: horizontal-stack
-      cards:
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        name: Router. Internet Трафік
-        icon: mdi:wide-area-network
-        entities:
-          - entity: sensor.network_router_total_mbit
-            name: Загальне
-            color: magenta         
-          - entity: sensor.network_router_rxt_mbit
-            name: Отримано
-            color: green
-          - entity: sensor.network_router_txt_mbit
-            name: Передано
-            color: blue            
-        hours_to_show: 120
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: max
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          icon: true
-          state: true
-          labels: true
-          legend: true
-          
-############################### 
-    - type: horizontal-stack
-      cards:
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        name: Router. Внутрішній Трафік
-        icon: mdi:wide-area-network
-        entities:
-          - entity: sensor.network_lan_internal_total_kbit
-            name: Загальне
-            color: cyan         
-          # - entity: sensor.network_lan_internal_download_kbit
-          #   name: Отримано
-          #   color: green
-          # - entity: sensor.network_lan_internal_upload_kbit
-          #   name: Передано
-          #   color: blue            
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: max
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          icon: true
-          state: true
-          labels: true
-          legend: true
-          
+    ######################## Роутер
+    cards:
+      - type: markdown
+        #      icon: mdi:lan-connect
+        content: >
+          <ha-icon icon="mdi:router-network"></ha-icon>
+          **Router. MikroTik RB4011iGS+**
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Router. Internet Трафік
+            icon: mdi:wide-area-network
+            entities:
+              - entity: sensor.network_router_total_mbit
+                name: Загальне
+                color: magenta
+              - entity: sensor.network_router_rxt_mbit
+                name: Отримано
+                color: green
+              - entity: sensor.network_router_txt_mbit
+                name: Передано
+                color: blue
+            hours_to_show: 120
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
+
+      ###############################
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Router. Внутрішній Трафік
+            icon: mdi:wide-area-network
+            entities:
+              - entity: sensor.network_lan_internal_total_kbit
+                name: Загальне
+                color: cyan
+              # - entity: sensor.network_lan_internal_download_kbit
+              #   name: Отримано
+              #   color: green
+              # - entity: sensor.network_lan_internal_upload_kbit
+              #   name: Передано
+              #   color: blue
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
+
+      ###############################
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Router. Трафік
+            font_size_header: 12
+            icon: mdi:wide-area-network
+            entities:
+              - entity: sensor.network_router_total_kbit
+                name: Зовнішній
+                color: blue
+              - entity: sensor.network_lan_internal_total_kbit
+                name: Внутрішній
+                color: cyan
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
+  ###############################
+  - type: vertical-stack
+    cards:
+      - type: markdown
+        #      icon: mdi:lan-connect
+        content: >
+          <ha-icon icon="mdi:wifi"></ha-icon>
+          **Безпровідний трафік**
+  - type: vertical-stack
+    cards:
+      - type: markdown
+        #      icon: mdi:lan-connect
+        content: >
+          <ha-icon icon="mdi:access-point"></ha-icon>
+          **Access Point 1. MikroTik cAP ac RBcAPGi-5acD2nD.**
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Access Point 1. Трафік
+            icon: mdi:wide-area-network
+            entities:
+              - entity: sensor.network_ap1_total_mbit
+                name: Загальне
+                color: magenta
+              - entity: sensor.network_ap1_rxt_mbit
+                name: Отримано
+                color: green
+              - entity: sensor.network_ap1_txt_mbit
+                name: Передано
+                color: blue
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
+
+  ###############################
+  - type: vertical-stack
+    cards:
+      - type: markdown
+        content: >
+          <ha-icon icon="mdi:home-analytics"></ha-icon>
+          **Аналіз трафіку**
+      ###############################
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            name: Router. Співвідношення трафіку Внутрішнього до Загального
+            font_size_header: 12
+            icon: mdi:wide-area-network
+            entities:
+              - entity: sensor.network_lan_internet
+                color: purple
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: avg
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              icon: true
+              state: true
+              labels: true
+              legend: true
 ###############################
-    - type: horizontal-stack
-      cards:
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        name: Router. Трафік
-        font_size_header: 12
-        icon: mdi:wide-area-network
-        entities:           
-          - entity: sensor.network_router_total_kbit
-            name: Зовнішній
-            color: blue
-          - entity: sensor.network_lan_internal_total_kbit
-            name: Внутрішній
-            color: cyan            
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: max
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          icon: true
-          state: true
-          labels: true
-          legend: true  
-###############################     
-  - type: vertical-stack
-    cards:      
-    - type: markdown
-      icon: mdi:lan-connect
-      content: >
-         <ha-icon icon="mdi:wifi"></ha-icon>
-         **Безпровідний трафік**
-  - type: vertical-stack
-    cards:      
-    - type: markdown
-      icon: mdi:lan-connect
-      content: >
-         <ha-icon icon="mdi:access-point"></ha-icon>
-         **Access Point 1. MikroTik cAP ac RBcAPGi-5acD2nD.**         
-    - type: horizontal-stack
-      cards:            
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        name: Access Point 1. Трафік
-        icon: mdi:wide-area-network
-        entities:
-          - entity: sensor.network_ap1_total_mbit
-            name: Загальне
-            color: magenta 
-          - entity: sensor.network_ap1_rxt_mbit
-            name: Отримано
-            color: green
-          - entity: sensor.network_ap1_txt_mbit
-            name: Передано
-            color: blue            
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: max
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          icon: true        
-          state: true
-          labels: true
-          legend: true
-          
-###############################      
-  - type: vertical-stack
-    cards:      
-    - type: markdown
-      content: >
-         <ha-icon icon="mdi:home-analytics"></ha-icon>
-         **Аналіз трафіку**
-############################### 
-    - type: horizontal-stack
-      cards:
-####### NEW CARD ##############            
-      - type: custom:mini-graph-card
-        name: Router. Співвідношення трафіку Внутрішнього до Загального
-        font_size_header: 12
-        icon: mdi:wide-area-network
-        entities:
-          - entity: sensor.network_lan_internet
-            color: purple           
-        hours_to_show: !secret global_hours_to_show
-        points_per_hour: !secret global_points_per_hour
-        aggregate_func: avg
-        hour24: true
-        show_line: true
-        show_points: false
-        show_legend: true
-        show:
-          icon: true
-          state: true
-          labels: true
-          legend: true  
-############################### 

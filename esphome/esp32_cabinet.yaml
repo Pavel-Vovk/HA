@@ -2,6 +2,7 @@
 substitutions:
   location: cabinet
   plant: monstera
+  update_interval: 60s
 
 esphome:
   name: esp32_cabinet
@@ -14,57 +15,71 @@ wifi:
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
-    ssid: !secret wifi_esp32_pass
+    ssid: !secret wifi_esp32_ssid
     password: !secret wifi_esp32_pass
 
 web_server:
   port: 80
+  
 
 # Інтервал сканування BLE
 esp32_ble_tracker:
-    
+
+i2c:
+  - id: bus_b
+    sda: 26
+    scl: 32
+    scan: true
 
 sensor:
-  - platform: dht
-    pin: GPIO23
-    model: DHT11
-    temperature:
-      #id:
-      name: "${location}_DH11_temperature"
-    humidity:
-      #id:
-      name: "${location}_DH11_humidity"
-    update_interval: 60s
-
 # Час в онлайні
   - platform: uptime
     name: ${location}_esp32_uptime
-    update_interval: 60s     
+    update_interval: ${update_interval}     
 
 # Рівень сигнала шлюзу
   - platform: wifi_signal
     name:  ${location}_esp32_wifi
-    update_interval: 60s
+    update_interval: ${update_interval}
+    
+#ESP Hall Sensor    
+  - platform: esp32_hall
+    name: ${location}_esp32_hall_sensor
+    update_interval: ${update_interval}
 
-#Сенсори годинника Вітальня    
-#  - platform: xiaomi_lywsd02
-#    mac_address: !secret living_room_time_mac
-#    temperature:
-#      name: "LYWSD02_living_room_Temperature"
-#    humidity:
-#      name: "LYWSD02_living_room_Humidity"
-    # battery_level:
-    #   name: "LYWSD02_living_room_battery_level"
+#Сенсори датчика ENV II - BMP-280
+  - platform: bmp280
+    i2c_id: bus_b
+    address: 0x76
+    temperature:
+      name: ${location}_bmp280_Temperature
+    pressure:
+      name: ${location}_bmp280_Pressure
+      oversampling: 16x
+    update_interval: ${update_interval}
 
-#Сенсори годинника Спальня    
-#  - platform: xiaomi_lywsd02
-#    mac_address: !secret bed_room_time_mac
-#    temperature:
-#      name: "LYWSD02_bed_room_Temperature"
-#    humidity:
-#      name: "LYWSD02_bed_room_Humidity"
-#    battery_level:
-#      name: "LYWSD02_bad_room_battery_level"
+#Сенсори датчика ENV II - SHT30
+  - platform: sht3xd
+    i2c_id: bus_b
+    address: 0x44
+    temperature:
+      name: ${location}_sht30_Temperature
+    humidity:
+      name: ${location}_sht30_Humidity
+    update_interval: ${update_interval}
+
+#Сенсори датчика DHT11
+  # - platform: dht
+  #   pin: GPIO23
+  #   model: DHT11
+  #   temperature:
+  #     #id:
+  #     name: "${location}_DH11_temperature"
+  #   humidity:
+  #     #id:
+  #     name: "${location}_DH11_humidity"
+  #   update_interval: ${update_interval}
+
 
 # Версія прошивки
 text_sensor:
@@ -75,7 +90,7 @@ text_sensor:
 # кнопка перезапуска    
 switch:
   - platform: restart
-    name: ${location}_esp32_restart
+    name: ${location}_esp32_Restart
 
 captive_portal:
 
