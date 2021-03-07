@@ -12,8 +12,8 @@ The configurations are stored in the separated files and folders in order to man
 - Raspberry PI 4B 8 GB
 - MikroTik Router RB4011iGS+ 
 - MikroTik Access Point cAP ac RBcAPGi-5acD2nD.
-- ESP32 nodemcu-32s (+ DH11 sensor)
-- ESP32 m5stack-core-esp32 2 pсs
+- ESP32 nodemcu-32s 2 pcs + BPM289 + SHT30
+- ESP32 m5stack-core-esp32 2 pсs + BPM289 + SHT30
 - Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C) 2 p pсs
 - LG TV 42LM340T TV Remote Control
 - Samsung TV
