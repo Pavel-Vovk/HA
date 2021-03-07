@@ -11,7 +11,7 @@ cards:
         #        icon: mdi:cpu-32-bit
         content: >
           <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
-          **ESP32**
+          **ESP32 Гостьова**
       - type: entities
         show_header_toggle: false
         entities:
@@ -64,7 +64,7 @@ cards:
         #        icon: mdi:leak
         content: >
           <ha-icon icon="mdi:leak"></ha-icon>
-          **Сенсори**
+          **Сенсори Гостьова**
       - type: entities
         show_header_toggle: false
         entities:

@@ -10,7 +10,7 @@ cards:
         #      icon: mdi:cpu-32-bit
         content: >
           <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
-          **ESP32**
+          **ESP32 Спальня**
       - type: entities
         show_header_toggle: false
         entities:
@@ -183,14 +183,14 @@ cards:
             #          icon: mdi:devices
             content: >
               <ha-icon icon="mdi:devices"></ha-icon>
-              **Пристрої**
+              **Пристрої Спальня**
       - type: horizontal-stack
         cards:
           - type: markdown
             #          icon: mdi:devices
             content: >
               <ha-icon icon="mdi:remote"></ha-icon>
-              **ІЧ Керування**
+              **ІЧ Керування Спальня**
       - type: horizontal-stack
         cards:
           - type: entities
@@ -221,7 +221,7 @@ cards:
         #      icon: mdi:clock-digital
         content: >
           <ha-icon icon="mdi:clock-digital"></ha-icon>
-          **Годинник**
+          **Годинник Спальня**
       - type: entities
         show_header_toggle: false
         entities:

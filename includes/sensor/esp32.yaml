@@ -1,96 +1,96 @@
 #### ESP32 темплейти
-  - platform: template
-    sensors:
-      cabinet_esp32_online:
-        friendly_name: "ESP32 в онлайні"
-        entity_id:
-          - sensor.time
-        value_template: >
-           {% set uptime = states('sensor.cabinet_esp32_uptime') | int %}
-           {% set minutes = (( uptime % 3600) / 60) | int %}
-           {% set hours = ((uptime % 86400) / 3600) | int %}
-           {% set days = (uptime / 86400) | int %}
-             {% if uptime < 1 %}
-               Меньше хвилини
-             {% else %}
-               {% if days > 0 %}
-                 {{ days }} д.
-               {% endif %}
-               {% if hours > 0 %}
-                 {% if days > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                 {{ hours }} год.
-               {% endif %}
-               {% if minutes > 0 %}
-                 {% if days > 0 or hours > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                   {{ minutes }} хв.
-               {% endif %}
-             {% endif %}
-        icon_template: mdi:clock         
+- platform: template
+  sensors:
+    cabinet_esp32_online:
+      friendly_name: "ESP32 в онлайні"
+      entity_id:
+        - sensor.time
+      value_template: >
+        {% set uptime = states('sensor.cabinet_esp32_uptime') | int %}
+        {% set minutes = (( uptime % 3600) / 60) | int %}
+        {% set hours = ((uptime % 86400) / 3600) | int %}
+        {% set days = (uptime / 86400) | int %}
+          {% if uptime < 1 %}
+            Меньше хвилини
+          {% else %}
+            {% if days > 0 %}
+              {{ days }} д.
+            {% endif %}
+            {% if hours > 0 %}
+              {% if days > 0 %}
+                {{ ' ' }}
+              {% endif %}
+              {{ hours }} год.
+            {% endif %}
+            {% if minutes > 0 %}
+              {% if days > 0 or hours > 0 %}
+                {{ ' ' }}
+              {% endif %}
+                {{ minutes }} хв.
+            {% endif %}
+          {% endif %}
+      icon_template: mdi:clock
 #### ESP32 темплейти
-  - platform: template
-    sensors:
-      bad_room_esp32_online:
-        friendly_name: "ESP32 в онлайні"
-        entity_id:
-          - sensor.time
-        value_template: >
-           {% set uptime = states('sensor.bad_room_esp32_uptime') | int %}
-           {% set minutes = (( uptime % 3600) / 60) | int %}
-           {% set hours = ((uptime % 86400) / 3600) | int %}
-           {% set days = (uptime / 86400) | int %}
-             {% if uptime < 1 %}
-               Меньше хвилини
-             {% else %}
-               {% if days > 0 %}
-                 {{ days }} д.
-               {% endif %}
-               {% if hours > 0 %}
-                 {% if days > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                 {{ hours }} год.
-               {% endif %}
-               {% if minutes > 0 %}
-                 {% if days > 0 or hours > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                   {{ minutes }} хв.
-               {% endif %}
-             {% endif %}
-        icon_template: mdi:clock         
+- platform: template
+  sensors:
+    bad_room_esp32_online:
+      friendly_name: "ESP32 в онлайні"
+      entity_id:
+        - sensor.time
+      value_template: >
+        {% set uptime = states('sensor.bad_room_esp32_uptime') | int %}
+        {% set minutes = (( uptime % 3600) / 60) | int %}
+        {% set hours = ((uptime % 86400) / 3600) | int %}
+        {% set days = (uptime / 86400) | int %}
+          {% if uptime < 1 %}
+            Меньше хвилини
+          {% else %}
+            {% if days > 0 %}
+              {{ days }} д.
+            {% endif %}
+            {% if hours > 0 %}
+              {% if days > 0 %}
+                {{ ' ' }}
+              {% endif %}
+              {{ hours }} год.
+            {% endif %}
+            {% if minutes > 0 %}
+              {% if days > 0 or hours > 0 %}
+                {{ ' ' }}
+              {% endif %}
+                {{ minutes }} хв.
+            {% endif %}
+          {% endif %}
+      icon_template: mdi:clock
 #### ESP32 темплейти
-  - platform: template
-    sensors:
-      living_room_esp32_online:
-        friendly_name: "ESP32 в онлайні"
-        entity_id:
-          - sensor.time
-        value_template: >
-           {% set uptime = states('sensor.living_room_esp32_uptime') | int %}
-           {% set minutes = (( uptime % 3600) / 60) | int %}
-           {% set hours = ((uptime % 86400) / 3600) | int %}
-           {% set days = (uptime / 86400) | int %}
-             {% if uptime < 1 %}
-               Меньше хвилини
-             {% else %}
-               {% if days > 0 %}
-                 {{ days }} д.
-               {% endif %}
-               {% if hours > 0 %}
-                 {% if days > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                 {{ hours }} год.
-               {% endif %}
-               {% if minutes > 0 %}
-                 {% if days > 0 or hours > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                   {{ minutes }} хв.
-               {% endif %}
-             {% endif %}
-        icon_template: mdi:clock         
+- platform: template
+  sensors:
+    living_room_esp32_online:
+      friendly_name: "ESP32 в онлайні"
+      entity_id:
+        - sensor.time
+      value_template: >
+        {% set uptime = states('sensor.living_room_esp32_uptime_2') | int %}
+        {% set minutes = (( uptime % 3600) / 60) | int %}
+        {% set hours = ((uptime % 86400) / 3600) | int %}
+        {% set days = (uptime / 86400) | int %}
+          {% if uptime < 1 %}
+            Меньше хвилини
+          {% else %}
+            {% if days > 0 %}
+              {{ days }} д.
+            {% endif %}
+            {% if hours > 0 %}
+              {% if days > 0 %}
+                {{ ' ' }}
+              {% endif %}
+              {{ hours }} год.
+            {% endif %}
+            {% if minutes > 0 %}
+              {% if days > 0 or hours > 0 %}
+                {{ ' ' }}
+              {% endif %}
+                {{ minutes }} хв.
+            {% endif %}
+          {% endif %}
+      icon_template: mdi:clock

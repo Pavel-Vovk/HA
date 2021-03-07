@@ -1,4 +1,4 @@
-title: Спальня
+title: Вітальня
 #icon: far:laptop-house
 icon: mdi:sofa-single
 #icon: /local/icon/office_1.png
@@ -10,13 +10,13 @@ cards:
         #      icon: mdi:cpu-32-bit
         content: >
           <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
-          **ESP32**
+          **ESP32 Вітальня**
       - type: entities
         show_header_toggle: false
         entities:
           - entity: sensor.living_room_esp32_firmware_version_2
             name: Версія прошивки
-          - entity: sensor.living_room_esp32_uptime_2
+          - entity: sensor.living_room_esp32_online
             name: В мережі
           - entity: device_tracker.esp32_mcu_living_room
             name: Місцезнахождення
@@ -61,7 +61,7 @@ cards:
         #        icon: mdi:leak
         content: >
           <ha-icon icon="mdi:leak"></ha-icon>
-          **Сенсори спальня**
+          **Сенсори Вітальня**
       - type: entities
         show_header_toggle: false
         entities:
@@ -174,7 +174,7 @@ cards:
             #          icon: mdi:brightness-6
             content: >
               <ha-icon icon="mdi:brightness-6"></ha-icon>
-              **Освітлення спальня**
+              **Освітлення Вітальня**
   - type: vertical-stack
     cards:
       - type: horizontal-stack
@@ -183,21 +183,21 @@ cards:
             #          icon: mdi:devices
             content: >
               <ha-icon icon="mdi:devices"></ha-icon>
-              **Пристрої**
+              **Пристрої Вітальня**
       - type: horizontal-stack
         cards:
           - type: markdown
             #          icon: mdi:devices
             content: >
               <ha-icon icon="mdi:remote"></ha-icon>
-              **ІЧ Керування**
+              **ІЧ Керування Вітальня**
       - type: horizontal-stack
         cards:
           - type: entities
             show_header_toggle: false
             entities:
               - entity: remote.ir_remote_livingroom
-                name: IR Спальня
+                name: IR Вітальня
               - entity: device_tracker.chuangmi_remote_h102c01_mibt3ea3_2
                 name: Додатково
       # - type: horizontal-stack
@@ -221,7 +221,7 @@ cards:
         #      icon: mdi:clock-digital
         content: >
           <ha-icon icon="mdi:clock-digital"></ha-icon>
-          **Годинник**
+          **Годинник Вітальня**
       - type: entities
         show_header_toggle: false
         entities:
