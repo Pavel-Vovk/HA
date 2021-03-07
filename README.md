@@ -47,3 +47,4 @@ The configurations are stored in the separated files and folders in order to man
 6. [Пульт ТВ LG](includes/views/tv_remote.yaml)
 
 ![Пульт](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
+
