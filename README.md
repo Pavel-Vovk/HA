@@ -27,27 +27,27 @@ The configurations are stored in the separated files and folders in order to man
   - Remote commands (could be closed in github public access) 
 
 ## Example with Screenshots
-1. [Мережа](includes/views/network.yaml)
+1. [Network](includes/views/network.yaml)
 
-![Мережа](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
+![Network](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
 
-2. [Мережа-Трафік](includes/views/network_traffic.yaml)
+2. [Network-Traffic](includes/views/network_traffic.yaml)
 
-![Мережа-Трафік](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant2.png)
+![Network-Traffic](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant2.png)
 
-3. [Данні Сервера HA](includes/views/homeassistant.yaml)
+3. [HA Details](includes/views/homeassistant.yaml)
 
-![Данні Сервера HA](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
+![[HA Details](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
 
-4. [Кабінет](includes/views/esp32_room2.yaml)
+4. [Cabinet](includes/views/esp32_room2.yaml)
 
-![Кабінет](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
+![Cabinet](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
 
-5. [Вітальня](includes/views/living_room.yaml)
+5. [Living Room](includes/views/living_room.yaml)
 
-![Вітальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
+![Living Room](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
 
-6. [Пульт ТВ LG](includes/views/tv_remote.yaml)
+6. [Remote LG TV](includes/views/tv_remote.yaml)
 
-![Пульт](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
+![Remote LG TV](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
 
