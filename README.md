@@ -21,9 +21,10 @@ The configurations are stored in the separated files and folders in order to man
 - TBD
 
 ## Additional
-- Telegramm notifications
-- - Sstatuses. 
-- - Remote commands 
+- Telegramm
+  - Auto Notification (restart/reboot)
+  - Statuses. 
+  - Remote commands (could be closed in github public access) 
 
 ## Example with Screenshots
 1. [Мережа](includes/views/network.yaml)
