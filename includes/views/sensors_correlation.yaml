@@ -27,7 +27,7 @@ cards:
                 color: blue
             hours_to_show: !secret global_hours_to_show
             points_per_hour: !secret global_points_per_hour
-            aggregate_func: max
+            aggregate_func: avg
             hour24: true
             show_line: true
             show_points: false
@@ -37,6 +37,8 @@ cards:
               state: true
               labels: true
               legend: true
+              extrema: true
+              average: true
   #########################################
   - type: vertical-stack
     ######################## Вологість
@@ -64,7 +66,7 @@ cards:
                 color: blue
             hours_to_show: !secret global_hours_to_show
             points_per_hour: !secret global_points_per_hour
-            aggregate_func: max
+            aggregate_func: avg
             hour24: true
             show_line: true
             show_points: false
@@ -74,6 +76,8 @@ cards:
               state: true
               labels: true
               legend: true
+              extrema: true
+              average: true
   #################################################
   - type: vertical-stack
     ######################## Тиск
@@ -101,7 +105,7 @@ cards:
                 color: blue
             hours_to_show: !secret global_hours_to_show
             points_per_hour: !secret global_points_per_hour
-            aggregate_func: max
+            aggregate_func: avg
             hour24: true
             show_line: true
             show_points: false
@@ -111,3 +115,5 @@ cards:
               state: true
               labels: true
               legend: true
+              extrema: true
+              average: true
