@@ -6,15 +6,15 @@ The HA server have been running in docker containers.
 
 The docker have been running on Raspberry PI 4B 8 GB.
 
-The configurations are stored in the separated files and folders in order to manage the different entities in separated files
+The configurations are stored in the separated files and folders in order to manage the different entities in separated files.
 
 ## Devices:
 - Raspberry PI 4B 8 GB
 - MikroTik Router RB4011iGS+ 
 - MikroTik Access Point cAP ac RBcAPGi-5acD2nD.
-- ESP32 nodemcu-32s 2 pcs + BPM280 + SHT30
+- ESP32 nodemcu-32s 1 pcs + BPM280 + SHT30
 - ESP32 m5stack-core-esp32 2 pсs + BPM280 + SHT30
-- Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C) 2 p pсs
+- Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C) 2 pсs
 - LG TV 42LM340T TV Remote Control
 - Samsung TV
 - Xiaomi Mijia Digital Clock 3.7" E-INK Screen Temperature Humidity Sensor Meter (LYWSD02) 2 pcs
@@ -22,8 +22,10 @@ The configurations are stored in the separated files and folders in order to man
 
 ## Additional
 - Telegramm notifications
+- - Sstatuses. 
+- - Remote commands 
 
-## Screenshots
+## Example with Screenshots
 1. [Мережа](includes/views/network.yaml)
 
 ![Мережа](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant1.png)
