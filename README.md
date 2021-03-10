@@ -40,10 +40,11 @@ The configurations are stored in the separated files and folders in order to man
 
 ![Кабінет](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant4.png)
 
-5. [Спальня](includes/views/esp32_bed_room.yaml)
+5. [Вітальня](includes/views/living_room.yaml)
 
-![Спальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
+![Вітальня](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant5.png)
 
 6. [Пульт ТВ LG](includes/views/tv_remote.yaml)
 
 ![Пульт](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant6.png)
+
