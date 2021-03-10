@@ -37,7 +37,7 @@ The configurations are stored in the separated files and folders in order to man
 
 3. [HA Details](includes/views/homeassistant.yaml)
 
-![[HA Details](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
+![HA Details](https://github.com/Pavel-Vovk/HA/blob/master/image/home_assistant3.png)
 
 4. [Cabinet](includes/views/esp32_room2.yaml)
 
