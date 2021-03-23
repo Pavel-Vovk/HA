@@ -5,30 +5,38 @@ icon: mdi:door
 #icon: mdi:google-classroom
 cards:
   - type: vertical-stack
-######################## Роутер
-    cards:      
-    - type: entities
-      show_header_toggle: false
-      entities:
-        - entity: light.xiaomi_gateway_light
-          name: Світильник
-        - entity: sensor.xiaomi_gateway_illuminance
-          name: Освітлення
-    - type: horizontal-stack
-      cards:
-        - type: markdown
-          icon: mdi:brightness-6
-          content: >
-            <ha-icon icon="mdi:brightness-6"></ha-icon>
-            **Освітлення коридор**
-    - type: light
-      entity: light.xiaomi_gateway_light
-      name: Світильник Коридор Xiaomi
+    ######################## Роутер
+    cards:
+      - type: markdown
+        #        icon: mdi:devices
+        content: >
+          <ha-icon icon="mdi:devices"></ha-icon>
+          **Xiaomi Gateway 2 (v3)**
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: light.xiaomi_gateway_light
+            name: "Світильник"
+          - entity: sensor.xiaomi_gateway_illuminance
+            name: Освітлення
+      - type: alarm-panel
+        name: "Xiaomi Gateway 2 (v3)"
+        entity: alarm_control_panel.xiaomi_gateway_alarm
+      - type: horizontal-stack
+        cards:
+          - type: markdown
+            #          icon: mdi:brightness-6
+            content: >
+              <ha-icon icon="mdi:brightness-6"></ha-icon>
+              **Освітлення коридор**
+      - type: light
+        entity: light.xiaomi_gateway_light
+        name: Світильник Коридор Xiaomi
 
-    - type: horizontal-stack
-      cards:
-        - type: markdown
-          icon: mdi:devices
-          content: >
-            <ha-icon icon="mdi:devices"></ha-icon>
-            **Пристрої**
+  - type: horizontal-stack
+    cards:
+      - type: markdown
+        #          icon: mdi:devices
+        content: >
+          <ha-icon icon="mdi:devices"></ha-icon>
+          **Пристрої**

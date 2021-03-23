@@ -68,6 +68,17 @@ sensor:
       name: ${location}_sht30_Humidity
     update_interval: ${update_interval}
 
+#Сенсори датчика SGP30
+  - platform: sgp30
+    eco2:
+      name: ${location}_sgp30_eCO2
+      accuracy_decimals: 1
+    tvoc:
+      name: ${location}_sgp30_TVOC
+      accuracy_decimals: 1
+    address: 0x58
+    update_interval: ${update_interval}
+
 #Сенсори датчика DHT11
   # - platform: dht
   #   pin: GPIO23

@@ -170,4 +170,88 @@ cards:
                 color: "#FFA500"
               - value: 1045
                 color: "#FF0000"
-###############################
+  ###############################
+  ###-----
+  ###############################
+  - type: vertical-stack
+    cards:
+      - type: markdown
+        #        icon: mdi:leak
+        content: >
+          <ha-icon icon="mdi:leak"></ha-icon>
+          **Сенсори Гостьова**
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: sensor.cabinet_sgp30_eco2
+            name: CO2
+          - entity: sensor.cabinet_sgp30_tvoc
+            name: TVOC
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.cabinet_sgp30_eco2
+                name: Суглецевий газ CO2
+            name: Суглецевий газ CO2
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              average: true
+              extrema: true
+              name_adaptive_color: true
+              labels: true
+              legend: true
+            color_thresholds:
+              - value: 65
+                color: "#228B22"
+              - value: 220
+                color: "#9ACD32"
+              - value: 660
+                color: "#FFFF00"
+              - value: 2200
+                color: "#FFA500"
+              - value: 5000
+                color: "#FF0000"
+
+      ###############################
+
+      - type: horizontal-stack
+        cards:
+          ####### NEW CARD ##############
+          - type: custom:mini-graph-card
+            entities:
+              - entity: sensor.cabinet_sgp30_tvoc
+                name: Забрудненість повітря домішками TVOC
+            name: Вологість
+            hours_to_show: !secret global_hours_to_show
+            points_per_hour: !secret global_points_per_hour
+            aggregate_func: max
+            hour24: true
+            show_line: true
+            show_points: false
+            show_legend: true
+            show:
+              average: true
+              extrema: true
+              name_adaptive_color: true
+              labels: true
+              legend: true
+            color_thresholds:
+              - value: 0.3
+                color: "#228B22"
+              - value: 1
+                color: "#9ACD32"
+              - value: 3
+                color: "#FFFF00"
+              - value: 10
+                color: "#FFA500"
+              - value: 25
+                color: "#FF0000"
+      ###############################
