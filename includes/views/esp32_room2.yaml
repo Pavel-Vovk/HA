@@ -193,8 +193,8 @@ cards:
           - type: custom:mini-graph-card
             entities:
               - entity: sensor.cabinet_sgp30_eco2
-                name: Суглецевий газ CO2
-            name: Суглецевий газ CO2
+                name: Вуглецевий газ CO2
+            name: Вуглецевий газ CO2
             hours_to_show: !secret global_hours_to_show
             points_per_hour: !secret global_points_per_hour
             aggregate_func: max
@@ -229,7 +229,7 @@ cards:
             entities:
               - entity: sensor.cabinet_sgp30_tvoc
                 name: Забрудненість повітря домішками TVOC
-            name: Вологість
+            name: Забрудненість повітря домішками TVOC
             hours_to_show: !secret global_hours_to_show
             points_per_hour: !secret global_points_per_hour
             aggregate_func: max
