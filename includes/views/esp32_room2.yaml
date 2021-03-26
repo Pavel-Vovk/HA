@@ -196,8 +196,8 @@ cards:
                 name: Вуглецевий газ CO2
             name: Вуглецевий газ CO2
             hours_to_show: !secret global_hours_to_show_48
-            points_per_hour: !secret global_points_per_hour_48_4
-            aggregate_func: max
+            points_per_hour: !secret global_points_per_hour_48_1
+            aggregate_func: avg
             smoothing: false
             hour24: true
             show_line: true
@@ -232,8 +232,8 @@ cards:
                 name: Забрудненість повітря домішками TVOC
             name: Забрудненість повітря домішками TVOC
             hours_to_show: !secret global_hours_to_show_48
-            points_per_hour: !secret global_points_per_hour_48_4
-            aggregate_func: max
+            points_per_hour: !secret global_points_per_hour_48_1
+            aggregate_func: avg
             smoothing: false
             hour24: true
             show_line: true
