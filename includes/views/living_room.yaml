@@ -1,13 +1,10 @@
 title: Вітальня
-#icon: far:laptop-house
 icon: mdi:sofa-single
-#icon: /local/icon/office_1.png
 cards:
   - type: vertical-stack
     ######################## Роутер
     cards:
       - type: markdown
-        #      icon: mdi:cpu-32-bit
         content: >
           <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
           **ESP32 Вітальня**
@@ -58,7 +55,6 @@ cards:
   - type: vertical-stack
     cards:
       - type: markdown
-        #        icon: mdi:leak
         content: >
           <ha-icon icon="mdi:leak"></ha-icon>
           **Сенсори Вітальня**
@@ -171,7 +167,6 @@ cards:
       - type: horizontal-stack
         cards:
           - type: markdown
-            #          icon: mdi:brightness-6
             content: >
               <ha-icon icon="mdi:brightness-6"></ha-icon>
               **Освітлення Вітальня**
@@ -180,14 +175,12 @@ cards:
       - type: horizontal-stack
         cards:
           - type: markdown
-            #          icon: mdi:devices
             content: >
               <ha-icon icon="mdi:devices"></ha-icon>
               **Пристрої Вітальня**
       - type: horizontal-stack
         cards:
           - type: markdown
-            #          icon: mdi:devices
             content: >
               <ha-icon icon="mdi:remote"></ha-icon>
               **ІЧ Керування Вітальня**
@@ -200,25 +193,8 @@ cards:
                 name: IR Вітальня
               - entity: device_tracker.chuangmi_remote_h102c01_mibt3ea3_2
                 name: Додатково
-      # - type: horizontal-stack
-      #   cards:
-      #     - type: entity-button
-      #       name: Turn On TV
-      #       entity: remote.ir_remote_badroom
-      #       tap_action:
-      #         action: call-service
-      #         service: remote.send_command
-      #         service_data:
-      #           command: tv_turn_on
-      #           entity_id: remote.ir_remote_badroom
-      #       hold_action:
-      #         action: more-info
-      #       show_icon: true
-      #       show_name: true
-
       ###############################
       - type: markdown
-        #      icon: mdi:clock-digital
         content: >
           <ha-icon icon="mdi:clock-digital"></ha-icon>
           **Годинник Вітальня**

@@ -21,8 +21,8 @@ resources:
     type: module
 title: !secret home_title
 views:
-  ##Погода
-  - !include /config/includes/views/weather.yaml
+#  ##Погода
+#  - !include /config/includes/views/weather.yaml
   ##Мережа
   - !include /config/includes/views/network.yaml
   ##Мережа Траффік

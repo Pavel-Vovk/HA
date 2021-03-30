@@ -1,14 +1,10 @@
 title: Коридор
-#icon: far:laptop-house
 icon: mdi:door
-#icon: /local/icon/office_1.png
-#icon: mdi:google-classroom
 cards:
   - type: vertical-stack
     ######################## Роутер
     cards:
       - type: markdown
-        #        icon: mdi:devices
         content: >
           <ha-icon icon="mdi:devices"></ha-icon>
           **Xiaomi Gateway 2 (v3)**
@@ -25,7 +21,6 @@ cards:
       - type: horizontal-stack
         cards:
           - type: markdown
-            #          icon: mdi:brightness-6
             content: >
               <ha-icon icon="mdi:brightness-6"></ha-icon>
               **Освітлення коридор**
@@ -36,7 +31,6 @@ cards:
   - type: horizontal-stack
     cards:
       - type: markdown
-        #          icon: mdi:devices
         content: >
           <ha-icon icon="mdi:devices"></ha-icon>
           **Пристрої**

@@ -1,14 +1,10 @@
 title: Кабінет
-#icon: far:laptop-house
 icon: mdi:chair-rolling
-#icon: /local/icon/office_1.png
-#icon: mdi:google-classroom
 cards:
   - type: vertical-stack
     ######################## Роутер
     cards:
       - type: markdown
-        #        icon: mdi:cpu-32-bit
         content: >
           <ha-icon icon="mdi:cpu-32-bit"></ha-icon>
           **ESP32 Гостьова**
@@ -46,7 +42,6 @@ cards:
               name_adaptive_color: true
               labels: true
               legend: true
-            # color_thresholds_transition: hard
             color_thresholds:
               - value: -35
                 color: "#228B22"
@@ -61,7 +56,6 @@ cards:
   - type: vertical-stack
     cards:
       - type: markdown
-        #        icon: mdi:leak
         content: >
           <ha-icon icon="mdi:leak"></ha-icon>
           **Сенсори Гостьова**
