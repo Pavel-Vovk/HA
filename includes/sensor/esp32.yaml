@@ -4,7 +4,7 @@
     cabinet_esp32_online:
       friendly_name: "ESP32 в онлайні"
       entity_id:
-      #        - sensor.time
+        - sensor.time
       value_template: >
         {% set uptime = states('sensor.cabinet_esp32_uptime') | int %}
         {% set minutes = (( uptime % 3600) / 60) | int %}
@@ -36,7 +36,7 @@
     bad_room_esp32_online:
       friendly_name: "ESP32 в онлайні"
       entity_id:
-      #        - sensor.time
+        - sensor.time
       value_template: >
         {% set uptime = states('sensor.bad_room_esp32_uptime') | int %}
         {% set minutes = (( uptime % 3600) / 60) | int %}
@@ -68,7 +68,7 @@
     living_room_esp32_online:
       friendly_name: "ESP32 в онлайні"
       entity_id:
-      #        - sensor.time
+        - sensor.time
       value_template: >
         {% set uptime = states('sensor.living_room_esp32_uptime_2') | int %}
         {% set minutes = (( uptime % 3600) / 60) | int %}

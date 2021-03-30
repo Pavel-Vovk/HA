@@ -1,56 +1,55 @@
-  # - platform: rpi_power
-  #   text_state: true
-  # # Minimal configuration of the standard time and date sensor
-  - platform: command_line
-    name: "Raspberry Pi 4 8GB. CPU Температура"
-    command: "cat /sys/class/thermal/thermal_zone0/temp"
-    # If errors occur, make sure configuration file is encoded as UTF-8
-    unit_of_measurement: "°C"
-    value_template: '{{ value | multiply(0.001) | round(1) }}'
+# - platform: rpi_power
+#   text_state: true
+# # Minimal configuration of the standard time and date sensor
+- platform: command_line
+  name: "Raspberry Pi 4 8GB. CPU Температура"
+  command: "cat /sys/class/thermal/thermal_zone0/temp"
+  # If errors occur, make sure configuration file is encoded as UTF-8
+  unit_of_measurement: "°C"
+  value_template: "{{ value | multiply(0.001) | round(1) }}"
 
-  - platform: command_line
-    name: "Raspberry Pi 4 8GB. Total RAM"
-    command: "free -m | awk '/Mem:/ {print $2}'"
-    # If errors occur, make sure configuration file is encoded as UTF-8
-    unit_of_measurement: "MB"
+- platform: command_line
+  name: "Raspberry Pi 4 8GB. Total RAM"
+  command: "free -m | awk '/Mem:/ {print $2}'"
+  # If errors occur, make sure configuration file is encoded as UTF-8
+  unit_of_measurement: "MB"
 
-  - platform: command_line
-    name: "Raspberry Pi 4 8GB. Used RAM"
-    command: "free -m | awk '/Mem:/ {print $3}'"
-    # If errors occur, make sure configuration file is encoded as UTF-8
-    unit_of_measurement: "MB"
+- platform: command_line
+  name: "Raspberry Pi 4 8GB. Used RAM"
+  command: "free -m | awk '/Mem:/ {print $3}'"
+  # If errors occur, make sure configuration file is encoded as UTF-8
+  unit_of_measurement: "MB"
 
-  - platform: command_line
-    name: "Raspberry Pi 4 8GB. Available RAM"
-    command: "free -m | awk '/Mem:/ {print $6}'"
-    # If errors occur, make sure configuration file is encoded as UTF-8
-    unit_of_measurement: "MB"
+- platform: command_line
+  name: "Raspberry Pi 4 8GB. Available RAM"
+  command: "free -m | awk '/Mem:/ {print $6}'"
+  # If errors occur, make sure configuration file is encoded as UTF-8
+  unit_of_measurement: "MB"
 
+- platform: time_date
+  display_options:
+    - "date_time_iso"
+# Build on the standard sensor to produce one that can be customized
+- platform: template
+  sensors:
+    date_time_formatted:
+      friendly_name: "Date and time"
+      value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%d.%m %Y, %H:%M') }}"
+      icon_template: mdi:calendar-clock
 
-  - platform: time_date
-    display_options:
-      - 'date_time_iso'
-  # Build on the standard sensor to produce one that can be customized
-  - platform: template
-    sensors:
-      date_time_formatted:
-        friendly_name: "Date and time"
-        value_template: "{{ as_timestamp(states('sensor.date_time_iso')) | timestamp_custom('%d.%m %Y, %H:%M') }}"
-        icon_template: mdi:calendar-clock
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "time_date"
 
-  - platform: time_date
-    display_options:
-      - 'time'
-      - 'date'
-      - 'time_date'
+- platform: template
+  sensors:
+    date_custom:
+      value_template: "{{ as_timestamp(states.sensor.date.state) | timestamp_custom('%d.%m.%Y') }}"
 
-  - platform: template
-    sensors:
-      date_custom:
-        value_template: "{{ as_timestamp(states.sensor.date.state) | timestamp_custom('%d.%m.%Y') }}"
-
-  - platform: systemmonitor
-    resources:
+- platform: systemmonitor
+  resources:
     - type: processor_use
     - type: processor_temperature
     - type: disk_use_percent
@@ -65,87 +64,87 @@
     - type: last_boot
     - type: ipv4_address
       arg: eth0
-      
-  - platform: sql
-    db_url: mysql://hass:hass@core-mariadb/homeassistant?charset=utf8
-    queries:
-      - name: Maria DB size
-        query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
-        column: 'value'
-        unit_of_measurement: MB
 
-  - platform: template
-    sensors:
-      disk_total:
-        friendly_name: "Розмір диску"
-        value_template: "{{ (states('sensor.disk_free') | float ) + (states('sensor.disk_use') | float ) | round(1) }}"
-        unit_of_measurement: "GiB"
+- platform: sql
+  db_url: mysql://hass:hass@core-mariadb/homeassistant?charset=utf8
+  queries:
+    - name: Maria DB size
+      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="homeassistant" GROUP BY table_schema;'
+      column: "value"
+      unit_of_measurement: MB
+
+- platform: template
+  sensors:
+    disk_total:
+      friendly_name: "Розмір диску"
+      value_template: "{{ (states('sensor.disk_free') | float ) + (states('sensor.disk_use') | float ) | round(1) }}"
+      unit_of_measurement: "GiB"
 
 # Время с последней перезагрузки
-  - platform: template
-    sensors:
-      last_boot_custom:
-        friendly_name: "Остання перезагрузка"
-        entity_id:
-#          - sensor.time
-        value_template: >
-           {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.last_boot')) | int %}
-           {% set minutes = (( uptime % 3600) / 60) | int %}
-           {% set hours = ((uptime % 86400) / 3600) | int %}
-           {% set days = (uptime / 86400) | int %}
-             {% if uptime < 1 %}
-               Меньше хвилини
-             {% else %}
-               {% if days > 0 %}
-                 {{ days }} д.
-               {% endif %}
-               {% if hours > 0 %}
-                 {% if days > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                 {{ hours }} год.
-               {% endif %}
-               {% if minutes > 0 %}
-                 {% if days > 0 or hours > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                   {{ minutes }} хв.
-               {% endif %}
-             {% endif %}
-        icon_template: mdi:clock
-        
-  - platform: uptime
-    name: online
-#    unit_of_measurement: minutes        
+- platform: template
+  sensors:
+    last_boot_custom:
+      friendly_name: "Остання перезагрузка"
+      entity_id:
+        - sensor.time
+      value_template: >
+        {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.last_boot')) | int %}
+        {% set minutes = (( uptime % 3600) / 60) | int %}
+        {% set hours = ((uptime % 86400) / 3600) | int %}
+        {% set days = (uptime / 86400) | int %}
+          {% if uptime < 1 %}
+            Меньше хвилини
+          {% else %}
+            {% if days > 0 %}
+              {{ days }} д.
+            {% endif %}
+            {% if hours > 0 %}
+              {% if days > 0 %}
+                {{ ' ' }}
+              {% endif %}
+              {{ hours }} год.
+            {% endif %}
+            {% if minutes > 0 %}
+              {% if days > 0 or hours > 0 %}
+                {{ ' ' }}
+              {% endif %}
+                {{ minutes }} хв.
+            {% endif %}
+          {% endif %}
+      icon_template: mdi:clock
 
-  - platform: template
-    sensors:
-       online_custom:
-        friendly_name: "Home Assistant в онлайні"
-        entity_id:
-#          - sensor.time         
-        value_template: >
-           {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.online')) | int %}
-           {% set minutes = (( uptime % 3600) / 60) | int %}
-           {% set hours = ((uptime % 86400) / 3600) | int %}
-           {% set days = (uptime / 86400) | int %}
-             {% if uptime < 1 %}
-               Меньше хвилини
-             {% else %}
-               {% if days > 0 %}
-                 {{ days }} д.
-               {% endif %}
-               {% if hours > 0 %}
-                 {% if days > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                 {{ hours }} год.
-               {% endif %}
-               {% if minutes > 0 %}
-                 {% if days > 0 or hours > 0 %}
-                   {{ ' ' }}
-                 {% endif %}
-                   {{ minutes }} хв.
-               {% endif %}
-             {% endif %}
-        icon_template: mdi:clock  
+- platform: uptime
+  name: online
+#    unit_of_measurement: minutes
+
+- platform: template
+  sensors:
+    online_custom:
+      friendly_name: "Home Assistant в онлайні"
+      entity_id:
+        - sensor.time
+      value_template: >
+        {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.online')) | int %}
+        {% set minutes = (( uptime % 3600) / 60) | int %}
+        {% set hours = ((uptime % 86400) / 3600) | int %}
+        {% set days = (uptime / 86400) | int %}
+          {% if uptime < 1 %}
+            Меньше хвилини
+          {% else %}
+            {% if days > 0 %}
+              {{ days }} д.
+            {% endif %}
+            {% if hours > 0 %}
+              {% if days > 0 %}
+                {{ ' ' }}
+              {% endif %}
+              {{ hours }} год.
+            {% endif %}
+            {% if minutes > 0 %}
+              {% if days > 0 or hours > 0 %}
+                {{ ' ' }}
+              {% endif %}
+                {{ minutes }} хв.
+            {% endif %}
+          {% endif %}
+      icon_template: mdi:clock
