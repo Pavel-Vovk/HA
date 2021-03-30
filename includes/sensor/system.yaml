@@ -87,7 +87,7 @@
       last_boot_custom:
         friendly_name: "Остання перезагрузка"
         entity_id:
-          - sensor.time
+#          - sensor.time
         value_template: >
            {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.last_boot')) | int %}
            {% set minutes = (( uptime % 3600) / 60) | int %}
@@ -116,14 +116,14 @@
         
   - platform: uptime
     name: online
-    unit_of_measurement: minutes        
+#    unit_of_measurement: minutes        
 
   - platform: template
     sensors:
        online_custom:
         friendly_name: "Home Assistant в онлайні"
         entity_id:
-          - sensor.time         
+#          - sensor.time         
         value_template: >
            {% set uptime = as_timestamp (now()) -as_timestamp(states('sensor.online')) | int %}
            {% set minutes = (( uptime % 3600) / 60) | int %}
