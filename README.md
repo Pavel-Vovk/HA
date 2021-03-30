@@ -14,6 +14,8 @@ The configurations are stored in the separated files and folders in order to man
 - MikroTik Access Point cAP ac RBcAPGi-5acD2nD.
 - SLS Gateway 
 - CC2652 V4 Zigbee Stik
+- Xiaomi Mi Smart Home Multifunction Gateway 2 (DGNWG02LM)
+- Xiaomi Mi Smart Home Multifunction Gateway 3 (ZNDMWG03LM)
 - ESP32 nodemcu-32s (2 pcs) + BPM280 + SHT30 (2 pcs) + SGP30 (1 pcs)
 - ESP32 m5stack-core-esp32 (1 pсs) + BPM280 + SHT30 (1 pcs) 
 - Xiaomi IR Remote (chuangmi-remote-h102c01, CMYCq01C) 2 pсs
